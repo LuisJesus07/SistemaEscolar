@@ -20,8 +20,9 @@
 					<th>Telefono</th>
 					<th>Nacimiento</th>
 					<th>Sexo</th>
-					<th>Generacion</th>
+					<th>Grado</th>
 					<th>Grupo</th>
+					<th>Generacion</th>
 				</tr>
 			</thead>
 
@@ -44,10 +45,11 @@
 					<td><?php echo $alumno->telefono; ?></td>
 					<td><?php echo $alumno->nacimiento; ?></td>
 					<td><?php echo $alumno->sexo; ?></td>
-					<td><?php echo $alumno->generacion; ?></td>
+					<td><?php echo $alumno->grado; ?></td>
 					<td><?php echo $alumno->grupo; ?></td>
+					<td><?php echo $alumno->generacion; ?></td>
 					<td><a href="<?php echo constant('URL') . 'consulta/verAlumno/' . $alumno->matricula ?>"> Editar</a></td>	
-					<td><button class="bEliminar" data-matricula="<?php  echo $alumno->matricula ?>">Eliminar</button></td> 
+					<td><button class="bEliminar" data-matricula="<?php  echo $alumno->matricula ?>">Eliminar</button></td>
 					
 				</tr>
 

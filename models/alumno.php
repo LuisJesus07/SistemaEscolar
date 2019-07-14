@@ -11,6 +11,7 @@ class Alumno{
 	public $sexo;
 	public $generacion;
 	public $grupo;
+	public $grado;
 
 }
 
