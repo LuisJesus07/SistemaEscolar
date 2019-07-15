@@ -47,17 +47,57 @@
 
 			<p>
 				<label>Sexo: </label>
-				<input type="text" name="sexo">
+				<!--<input type="text" name="sexo"> -->
+				<select name="sexo">
+					<option value="1">Masculino</option>
+					<option value="2">Femenino</option>
+				</select>
 			</p>
 
 			<p>
 				<label>Grupo: </label>
-				<input type="text" name="grupo">
+				<!--<input type="text" name="grupo"> -->
+				<select name="grupo">
+					<?php
+					include_once 'models/grupo.php';
+
+					foreach($this->grupos as $row){
+						$grupo = new Grupo();
+						$grupo = $row;
+
+
+					?>
+					<option value="<?php echo $grupo->idGrupo ?>"><?php echo $grupo->grado."°". $grupo->nombreGrupo ?></option>
+					
+					<?php } ?>
+
+				</select>
+
 			</p>
 
 			<p>
 				<label>Generacion: </label>
-				<input type="text" name="generacion">
+				<!--<input type="text" name="generacion"> -->
+
+				<select name="generacion">
+					<?php 
+
+					include_once 'models/generacion.php';
+
+					foreach($this->generaciones as $row){
+
+						$generacion = new Generacion();
+						$generacion = $row;
+
+					?>
+
+					<option value="<?php echo $generacion->idGeneracion ?>"><?php echo $generacion->generacion  ?></option>
+
+
+					<?php } ?>
+
+				</select>
+
 			</p>
 
 

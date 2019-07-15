@@ -15,7 +15,20 @@ class Registrar extends Controller{
 
 	function renderVista(){
 
+		//obtener los grupos para el CB
+		$grupos = $this->model->getGrupos();
+		//pasarle los grupos a la vista
+		$this->view->grupos = $grupos;
+
+
+		//obtener las generaciones para el CB
+		$generaciones = $this->model->getGeneraciones();
+		//pasarle las generaciones a la vista
+		$this->view->generaciones = $generaciones;
+
 		$this->view->render('registrar/index');
+
+
 
 	}
 
@@ -62,6 +75,8 @@ class Registrar extends Controller{
 		
 
 	}
+
+
 
 	
 }

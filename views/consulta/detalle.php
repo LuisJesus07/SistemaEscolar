@@ -9,7 +9,7 @@
 
 	<div class="opciones">
 
-		<h1>Registrar nuevo alumno.</h1>
+		<h1>Editar al alumno(a) <?php echo $this->alumno->nombre ?></h1>
 
 		<form method="POST" action="<?php echo constant('URL') .'consulta/actualizarAlumno'  ?>">
 
