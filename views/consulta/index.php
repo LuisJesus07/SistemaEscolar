@@ -9,6 +9,8 @@
 
 	<div class="opciones">
 		<h1>Esta es la vista consulta</h1>
+		<div id="respuesta"  class="center"></div>
+
 
 		<table style="width: 100%">
 			<thead>
@@ -49,7 +51,7 @@
 					<td><?php echo $alumno->grupo; ?></td>
 					<td><?php echo $alumno->generacion; ?></td>
 					<td><a href="<?php echo constant('URL') . 'consulta/verAlumno/' . $alumno->matricula ?>"> Editar</a></td>	
-					<td><button class="bEliminar" data-matricula="<?php  echo $alumno->matricula ?>">Eliminar</button></td>
+					<td><button class="btn-eliminar" data-matricula="<?php  echo $alumno->matricula ?>">Eliminar</button></td>
 					
 				</tr>
 
@@ -62,6 +64,8 @@
 
 
 	<?php require 'views/sidebar.php' ?>
+
+	<script type="text/javascript" src="<?php echo constant('URL').'public/js/main.js'  ?>"></script>
 
 </body>
 </html>
