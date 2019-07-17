@@ -1,5 +1,7 @@
 const botones = document.querySelectorAll(".btn-eliminar");
 
+
+
 botones.forEach(boton => {
 
 	boton.addEventListener("click", function(){
@@ -7,12 +9,22 @@ botones.forEach(boton => {
 		//console.log("hola");
 		const matricula = this.dataset.matricula;
 
-		const confirm = window.confirm("Desea eliminar al alumno con la matricula "+ matricula);
+		//saber si es alumno o maestro
+		const rol = this.dataset.rol;
+
+
+		const confirm = window.confirm("Desea eliminar al usuario con la matricula "+ matricula);
 
 		if(confirm){
 			//eliminar con AJAX
 
-			httpRequest("http://localhost/sistema%20escolar/consulta/eliminarAlumno/" + matricula, function(){
+			if(rol=="maestro"){
+				url = "http://localhost/sistema%20escolar/consultaMaestros/eliminarMaestro/" + matricula;
+			}else{
+				url = "http://localhost/sistema%20escolar/consulta/eliminarAlumno/" + matricula;
+			}
+
+			httpRequest(url , function(){
 
 				document.querySelector("#respuesta").innerHTML = this.responseText;
 
@@ -21,7 +33,10 @@ botones.forEach(boton => {
 
 				tbody.removeChild(fila);
 			});
+
+			
 		}
+		
 	});
 
 });

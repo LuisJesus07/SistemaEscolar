@@ -42,7 +42,7 @@
 				<div class="opcion">
 					<img src="<?php echo constant('URL') ?>public/img/maestros.png">
 
-					<input type="button" name="" value="Maestros">
+					<a href="<?php echo constant('URL') ?>maestros"><input type="button" name="" value="Maestros"></a>
 				</div>
 
 				<div class="opcion">
@@ -59,9 +59,9 @@
 				</div>
 
 				<div class="opcion">
-					<img src="<?php echo constant('URL') ?>public/img/grupos.png">
+					<img src="<?php echo constant('URL') ?>public/img/maestros.png">
 
-					<input type="button" name="" value="Grupos">
+					<a href="<?php echo constant('URL') ?>consultaMaestros"><input type="button" name="" value="Consultar Maestros"></a>
 				</div>
 				
 			</div>

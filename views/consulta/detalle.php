@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registrar Alumno</title>
+	<title>Editar Alumno</title>
 </head>
 <body>
 
