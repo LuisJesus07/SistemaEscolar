@@ -30,13 +30,13 @@
 				<div class="opcion">
 					<img src="<?php echo constant('URL') ?>public/img/generacion.png">
 
-					<input type="button" name="" value="Generación">
+					<a href="<?php echo constant('URL') ?>generaciones"><input type="button" name="" value="Generación"></a>
 				</div>
 
 				<div class="opcion">
 					<img src="<?php echo constant('URL') ?>public/img/grupos.png">
 
-					<input type="button" name="" value="Grupos">
+					<a href="<?php echo constant('URL') ?>consultaGrupos"><input type="button" name="" value="Grupos"></a>
 				</div>
 
 				<div class="opcion">
