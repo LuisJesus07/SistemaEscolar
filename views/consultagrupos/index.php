@@ -13,11 +13,43 @@
 
 		<form method="POST" action="<?php echo constant('URL') . 'consultaGrupos/verGrupo' ?>">
 			
-			<label>Grado</label>
-			<input type="text" name="grado">
+			<!--<label>Generacion</label>
+			<input type="text" name="generacion"> -->
+
+			<label>Generacion</label>
+			<select name="generacion">
+				<?php
+				include_once 'models/generacion.php';
+
+				foreach($this->generaciones as $row){
+					$generacion = new Generacion();
+					$generacion = $row;
+
+
+				?>
+				<option><?php echo $generacion->generacion  ?></option>
+
+
+				<?php } ?>
+			</select>
 
 			<label>Grupo</label>
-			<input type="text" name="nombreGrupo">
+			<select name="grupo">
+				<?php
+				include_once 'models/grupo.php';
+
+				foreach($this->grupos as $row){
+
+					$grupo = new Grupo();
+					$grupo = $row;
+
+				?>
+
+				<option><?php echo $grupo->grado."°".$grupo->nombreGrupo ?></option>
+
+			<?php } ?>
+
+			</select>
 
 			<input type="submit" name="" value="Ver Grupo">
 

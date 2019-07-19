@@ -8,23 +8,41 @@ class ConsultaGrupos extends Controller{
 
 	function renderVista(){
 
+		//obtener y pasar generaciones a la vista
+		$generaciones = $this->model->getGeneraciones();
+		$this->view->generaciones = $generaciones;
+
+		//obtener y pasar grados a la vista
+		$grupos = $this->model->getAllGrupos();
+		$this->view->grupos = $grupos;
+
+
+
 		$this->view->render('consultagrupos/index');
 	}
 
 
 	function verGrupo(){
 
-		$grado = $_POST['grado'];
-		$nombreGrupo = $_POST['nombreGrupo'];
+		$generacion = $_POST['generacion'];
+		$grupo = $_POST['grupo'];
+
+		//convertir lo que recibimos de grupo en un arreglo seprandolo por °
+		$grupo = explode("°", $grupo);
+		//asignar el grado y nombre grupo
+		$grado = $grupo[0];
+		$nombreGrupo = $grupo[1];
+
 
 
 		$alumnos = $this->model->getGrupo(['grado' => $grado,
-								'nombreGrupo' => $nombreGrupo]); 
+										   'nombreGrupo' => $nombreGrupo,
+										   'generacion' => $generacion]); 
 
 
 		$this->view->alumnos = $alumnos;
 
-		$this->view->render('consultagrupos/index');
+		$this->renderVista();
 
 	}
 }
