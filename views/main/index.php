@@ -48,7 +48,7 @@
 				<div class="opcion">
 					<img src="<?php echo constant('URL') ?>public/img/materias.png">
 
-					<input type="button" name="" value="Materias" >
+					<a href="<?php echo constant('URL') ?>materias"><input type="button" name="" value="Materias" ></a>
 				</div>
 
 				<div class="opcion">

@@ -2,6 +2,7 @@
 
 class Maestro{
 
+	public $idProfesor;
 	public $matricula;
 	public $nombre;
 	public $apellidos;
