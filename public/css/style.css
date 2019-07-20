@@ -161,5 +161,117 @@
 
 }
 
-/* consulta */
+/* consultagrupos */
 
+.busqueda{
+	font-family: 'Open Sans', Tahoma, Georgia, "Times New Roman", Times, serif;
+	margin-left: 32%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.busqueda input{
+	font-family: 'Open Sans', Tahoma, Georgia, "Times New Roman", Times, serif;
+	background-color: #eceff1;
+	width: 100px;
+	height: 20px;
+	border-width: 1px;
+	cursor: pointer;
+}
+
+.tabla{
+	margin: auto;
+	width: 90%;
+	background: #cadbeb;
+	box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.1);
+
+}
+
+
+.tabla thead tr th{
+	font-family: 'Open Sans', Tahoma, Georgia, "Times New Roman", Times, serif;
+	color: white;
+	background: linear-gradient(#0077d2, #005a9f);
+
+}
+
+.tabla tbody tr td{
+	background-color: #eaeef0;
+	font-family: 'Open Sans', Tahoma, Georgia, "Times New Roman", Times, serif;
+}
+
+/* consulta alumno */
+
+.consulta-alumno{
+	width: 100%;
+	margin-top: 3%;
+	margin: none;
+}
+
+/* registrar */
+
+.panel{
+	width: 90%;
+	margin: auto;
+	margin-top: 1%;
+	border: solid 1px #9abbda;
+    box-shadow: 2px 2px 5px 2px #c1d5e8;
+    font-family: 'Open Sans', Tahoma, Georgia, "Times New Roman", Times, serif;
+
+} 
+
+.panel h1{
+	margin:auto;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	background-color: #eceff1;
+	border-bottom: solid 1px #eceff1;
+}
+
+.panel input{
+	margin-top: 2%;
+	margin-bottom: 2%;
+	font-size: 1.2em;
+}
+
+.panel select{
+	margin-top: 2%;
+	font-size: 1.2em;
+} 
+
+.panel label{
+	font-size: 1.2em;
+	padding-left: 2%;
+}
+
+.btn-registrar{
+	text-shadow: 2px 5px 10px #000;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	width: 200px;
+	padding: 0.5em;
+	color: #fff;
+	text-decoration: none;
+	background: #00a54d;
+	cursor: pointer;
+	margin-left: 70%;
+}
+
+.error{
+	margin:auto;
+	text-align: center;
+	width: 60%;
+	margin-top: 2%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	color: #a94442;
+	background-color: #f2dede;
+	border-radius: 4px;
+	border: 1px solid #a94442;
+}
+
+.exito{
+	background-color: #dff0d8;
+	border: 1px solid #008100;
+	color: #3c763d;
+}

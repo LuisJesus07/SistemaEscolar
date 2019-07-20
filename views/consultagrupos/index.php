@@ -11,7 +11,7 @@
 		
 		<h1>Grupos</h1>
 
-		<form method="POST" action="<?php echo constant('URL') . 'consultaGrupos/verGrupo' ?>">
+		<form method="POST" class="busqueda" action="<?php echo constant('URL') . 'consultaGrupos/verGrupo' ?>">
 			
 			<!--<label>Generacion</label>
 			<input type="text" name="generacion"> -->
@@ -57,7 +57,7 @@
 		</form>
 
 
-		<table style="width: 100%">
+		<table  class="tabla">
 			<thead>
 				<tr>
 					<th>Generacion</th>

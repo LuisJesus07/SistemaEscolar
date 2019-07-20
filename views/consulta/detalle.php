@@ -9,61 +9,73 @@
 
 	<div class="opciones">
 
-		<h1>Editar al alumno(a) <?php echo $this->alumno->nombre ?></h1>
+		<div class="panel">
 
-		<form method="POST" action="<?php echo constant('URL') .'consulta/actualizarAlumno'  ?>">
+			<h1>Editar al alumno(a) <?php echo $this->alumno->nombre ?></h1>
 
-			<h3><?php echo $this->mensaje; ?></h3>
+			<form method="POST" action="<?php echo constant('URL') .'consulta/actualizarAlumno'  ?>">
 
-			<p>
-				<label>Matricula: </label>
-				<input type="text" name="matricula" disabled value="<?php echo $this->alumno->matricula ?>">
-			</p>
 			
-			<p>
-				<label>Nombre: </label>
-				<input type="text" name="nombre" value="<?php echo $this->alumno->nombre ?>">
-			</p>
+					<label>Matricula: </label>
+					<input type="text" name="matricula" disabled value="<?php echo $this->alumno->matricula ?>"><br>
+				
+				
+			
+					<label>Nombre: </label>
+					<input type="text" name="nombre" value="<?php echo $this->alumno->nombre ?>">
+				
 
-			<p>
-				<label>Apellidos: </label>
-				<input type="text" name="apellidos" value="<?php echo $this->alumno->apellidos ?>">
-			</p>
+			
+					<label>Apellidos: </label>
+					<input type="text" name="apellidos" value="<?php echo $this->alumno->apellidos ?>"><br>
+				
 
-			<p>
-				<label>Direccion: </label>
-				<input type="text" name="direccion" value="<?php echo $this->alumno->direccion ?>">
-			</p>
+			
+					<label>Direccion: </label>
+					<input type="text" name="direccion" value="<?php echo $this->alumno->direccion ?>">
+				
 
-			<p>
-				<label>Telefono: </label>
-				<input type="text" name="telefono" value="<?php echo $this->alumno->telefono ?>">
-			</p>
+					<label>Telefono: </label>
+					<input type="text" name="telefono" value="<?php echo $this->alumno->telefono ?>"><br>
+				
 
-			<p>
-				<label>Nacimiento: </label>
-				<input type="date" name="nacimiento" value="<?php echo $this->alumno->nacimiento ?>">
-			</p>
+			
+					<label>Nacimiento: </label>
+					<input type="date" name="nacimiento" value="<?php echo $this->alumno->nacimiento ?>">
+				
 
-			<p>
-				<label>Sexo: </label>
-				<input type="text" name="sexo" value="<?php echo $this->alumno->sexo ?>">
-			</p>
+			
+					<label>Sexo: </label>
+					<input type="text" name="sexo" value="<?php echo $this->alumno->sexo ?>"><br>
+				
 
-			<p>
-				<label>Grupo: </label>
-				<input type="text" name="grupo" value="<?php echo $this->alumno->grupo ?>">
-			</p>
+			
+					<label>Grupo: </label>
+					<input type="text" name="grupo" value="<?php echo $this->alumno->grupo ?>">
+				
 
-			<p>
-				<label>Generacion: </label>
-				<input type="text" name="generacion" value="<?php echo $this->alumno->generacion ?>">
-			</p>
+			
+					<label>Generacion: </label>
+					<input type="text" name="generacion" value="<?php echo $this->alumno->generacion ?>">
+				
 
+				<?php if(!empty($this->mensajeError)){ ?>
 
+					<div class="error"><?php echo $this->mensajeError; ?></div>
+						
+				<?php }?>
 
-			<input type="submit" name="" value="Actualizar alumno">
-		</form>
+				<?php if(!empty($this->mensajeExito)){ ?>
+
+					<div class="error exito"><?php echo $this->mensajeExito; ?></div>
+						
+				<?php }?>
+
+				<input type="submit" class="btn-registrar" value="Actualizar alumno">
+
+			</form>
+
+		</div>
 		
 	</div>
 

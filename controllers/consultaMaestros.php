@@ -5,7 +5,8 @@ class ConsultaMaestros extends Controller{
 	function __construct(){
 		parent::__construct();
 
-		$this->view->mensaje = "";
+		$this->view->mensajeError = "";
+		$this->view->mensajeExito = "";
 	}
 
 	function renderVista(){
@@ -71,13 +72,14 @@ class ConsultaMaestros extends Controller{
 
 			$this->view->maestro = $maestro;
 
-			$mensaje = "Maestro actualizado correctamente";
+			$mensajeExito = "Maestro actualizado correctamente";
 
 		}else{
-			$mensaje = "No se pudo actualizar al maestro";
+			$mensajeError = "No se pudo actualizar al maestro";
 		}
 
-		$this->view->mensaje = $mensaje;
+		$this->view->mensajeError = $mensajeError;
+		$this->view->mensajeExito = $mensajeExito;
 
 		$this->view->render('consultamaestros/detalle');
 	}

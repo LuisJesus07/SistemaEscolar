@@ -12,7 +12,7 @@
 		<div id="respuesta"  class="center"></div>
 
 
-		<table style="width: 100%">
+		<table class="tabla consulta-alumno">
 			<thead>
 				<tr>
 					<th>Matricula</th>

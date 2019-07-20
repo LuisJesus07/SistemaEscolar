@@ -5,7 +5,8 @@ class Generaciones extends Controller{
 	function __construct(){
 		parent::__construct();
 
-		$this->view->mensaje = "";
+		$this->view->mensajeError = "";
+		$this->view->mensajeExito = "";
 	}
 
 	function renderVista(){
@@ -18,18 +19,20 @@ class Generaciones extends Controller{
 
 		$generacion = $_POST['generacion'];
 
-		$mensaje = "";
+		$mensajeError = "";
+		$mensajeExito = "";
 
 		if($this->model->insertGeneracion($generacion)){
 
-			$mensaje = "Generacion agregada con exito";
+			$mensajeExito = "Generacion agregada con exito";
 
 		}else{
 
-			$mensaje = "no se pudo agregar generacion";
+			$mensajeError = "No se pudo agregar generacion";
 		}
 
-		$this->view->mensaje = $mensaje;
+		$this->view->mensajeError = $mensajeError;
+		$this->view->mensajeExito = $mensajeExito;
 
 		$this->renderVista();
 	}

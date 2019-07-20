@@ -7,7 +7,8 @@ class Consulta extends Controller{
 
 		parent::__construct();
 
-		$this->view->mensaje = "";
+		$this->view->mensajeError = "";
+		$this->view->mensajeExito = "";
 
 
 	}
@@ -88,13 +89,14 @@ class Consulta extends Controller{
 			$alumno->generacion = $generacion;
 
 			$this->view->alumno = $alumno;
-			$mensaje = "Alumno Actualizado con exito";
+			$mensajeExito = "Alumno Actualizado con exito";
 
 		}else{
-			$mensaje = "No se pudo actualizar el alumno";
+			$mensajeError = "No se pudo actualizar el alumno";
 		}
 
-		$this->view->mensaje = $mensaje;
+		$this->view->mensajeError = $mensajeError;
+		$this->view->mensajeExito = $mensajeExito;
 
 		$this->view->render('consulta/detalle');
 

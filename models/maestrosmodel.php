@@ -25,8 +25,7 @@ class MaestrosModel extends Model{
 
 		}catch(PDOException $e){
 
-			//return false;
-			print_r('Error connection: '. $e->getMessage());
+			return false;
 		}
 
 	}

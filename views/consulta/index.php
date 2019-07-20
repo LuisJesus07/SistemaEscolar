@@ -8,11 +8,11 @@
 	<?php require 'views/header.php' ?>
 
 	<div class="opciones">
-		<h1>Esta es la vista consulta</h1>
+		<h1>Alumnos</h1>
 		<div id="respuesta"  class="center"></div>
 
 
-		<table style="width: 100%">
+		<table class="tabla consulta-alumno">
 			<thead>
 				<tr>
 					<th>Matricula</th>
@@ -25,6 +25,8 @@
 					<th>Grado</th>
 					<th>Grupo</th>
 					<th>Generacion</th>
+					<th>Editar</th>
+					<th>Eliminar</th>
 				</tr>
 			</thead>
 

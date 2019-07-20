@@ -7,7 +7,8 @@ class Maestros extends Controller{
 
 		parent::__construct();
 
-		$this->view->mensaje = "";
+		$this->view->mensajeError = "";
+		$this->view->mensajeExito = "";
 	}
 
 	function renderVista(){
@@ -28,7 +29,8 @@ class Maestros extends Controller{
 		$nacimiento = $_POST['nacimiento'];
 		$sexo = $_POST['sexo'];
 
-		$mensaje = "";
+		$mensajeError = "";
+		$mensajeExito = "";
 
 		if($this->model->insertMaestro(['matricula' => $matricula,
 									    'nombre' => $nombre,
@@ -38,13 +40,14 @@ class Maestros extends Controller{
 									    'nacimiento' => $nacimiento,
 									    'sexo' => $sexo,])){
 
-			$mensaje = "Maestro registrado con exito";
+			$mensajeExito = "Maestro registrado con exito";
 
 		}else{
-			$mensaje = "No se pudo registrar el maestro";
+			$mensajeError = "No se pudo registrar el maestro";
 		}
 
-		$this->view->mensaje = $mensaje;
+		$this->view->mensajeError = $mensajeError;
+		$this->view->mensajeExito = $mensajeExito;
 
 		$this->renderVista();
 

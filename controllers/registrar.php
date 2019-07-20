@@ -6,7 +6,8 @@ class Registrar extends Controller{
 
 		parent:: __construct();
 
-		$this->view->mensaje = "";
+		$this->view->mensajeError = "";
+		$this->view->mensajeExito = "";
 
 		
 
@@ -45,7 +46,8 @@ class Registrar extends Controller{
 		$grupo = $_POST['grupo'];
 		$generacion = $_POST['generacion'];
 
-		$mensaje = "";
+		$mensajeError = "";
+		$mensajeExito = "";
 
 		if($this->model->insertAlumno(['matricula'  => $matricula,
 									'nombre'     => $nombre,
@@ -57,17 +59,18 @@ class Registrar extends Controller{
 									'grupo'      => $grupo,
 									'generacion' => $generacion])  ){
 
-			$mensaje = "Alumno ingresado con exito";
+			$mensajeExito = "Alumno ingresado con exito";
 			
 
 
 		}else{
 
-			$mensaje = "Error al ingresar el alumno";
+			$mensajeError = "Error al ingresar el alumno";
 
 		}
 
-		$this->view->mensaje = $mensaje;
+		$this->view->mensajeError = $mensajeError;
+		$this->view->mensajeExito = $mensajeExito;
 
 		$this->renderVista();
 

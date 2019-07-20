@@ -8,17 +8,32 @@
 	<?php require 'views/header.php' ?>
 
 	<div class="opciones">
-		
-		<h1>Agregar Generacion</h1>
-		<h3><?php  echo $this->mensaje; ?></h3>
 
-		<form method="POST" action="<?php echo constant('URL') ?>generaciones/agregarGeneracion">
+		<div class="panel">
 			
-			<label>Genracion</label>
-			<input type="text" name="generacion">
+			<h1>Agregar Generacion</h1>
 
-			<input type="submit" name="" value="Regisrar">
-		</form>
+			<form method="POST" action="<?php echo constant('URL') ?>generaciones/agregarGeneracion">
+				
+				<label>Genracion</label>
+				<input type="text" name="generacion">
+
+				<?php if(!empty($this->mensajeError)){ ?>
+
+					<div class="error"><?php echo $this->mensajeError; ?></div>
+						
+				<?php }?>
+
+				<?php if(!empty($this->mensajeExito)){ ?>
+
+					<div class="error exito"><?php echo $this->mensajeExito; ?></div>
+						
+				<?php }?>
+
+				<input type="submit" class="btn-registrar" value="Regisrar">
+			</form>
+
+		</div>
 		
 
 	</div>
