@@ -8,6 +8,8 @@
 	<?php require 'views/header.php'  ?>
 
 	<div class="opciones">
+
+		<div class="panel">
 		
 		<h1>Grupos</h1>
 
@@ -64,8 +66,7 @@
 					<th>Grado</th>
 					<th>Grupo</th>
 					<th>Matricula</th>
-					<th>Nombre</th>
-					<th>Apellidos</th>
+					<th>Nombre Alumno</th>
 				</tr>
 			</thead>
 
@@ -89,16 +90,21 @@
 						<td><?php echo $alumno->grado; ?></td>
 						<td><?php echo $alumno->grupo; ?></td>
 						<td><?php echo $alumno->matricula; ?></td>
-						<td><?php echo $alumno->nombre; ?></td>
-						<td><?php echo $alumno->apellidos; ?></td>					
+						<td><?php echo $alumno->nombre ." ".$alumno->apellidos; ?></td>
 					</tr>
 
 					<?php } ?>
+
+				<?php }elseif(!empty($this->mensajeError)){ ?>
+
+					<div class="error"><?php echo $this->mensajeError; ?></div>
 
 				<?php } ?>
 
 			</tbody>
 		</table>
+
+		</div>
 
 	</div>
 

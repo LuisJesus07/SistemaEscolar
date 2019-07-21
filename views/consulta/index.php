@@ -7,7 +7,10 @@
 
 	<?php require 'views/header.php' ?>
 
-	<div class="opciones">
+	<div class="opciones datos-tabla">
+
+		<div class="panel">
+
 		<h1>Alumnos</h1>
 		<div id="respuesta"  class="center"></div>
 
@@ -16,8 +19,7 @@
 			<thead>
 				<tr>
 					<th>Matricula</th>
-					<th>Nombre</th>
-					<th>Apellidos</th>
+					<th>Nombre Alumno</th>
 					<th>Direccion</th>
 					<th>Telefono</th>
 					<th>Nacimiento</th>
@@ -43,8 +45,7 @@
 				<!--  para eliminar un nodo se nesesita conocer el padre--> 
 				<tr id="fila-<?php echo $alumno->matricula ?>">
 					<td><?php echo $alumno->matricula; ?></td>
-					<td><?php echo $alumno->nombre; ?></td>
-					<td><?php echo $alumno->apellidos; ?></td>
+					<td><?php echo $alumno->nombre." ".$alumno->apellidos; ?></td>
 					<td><?php echo $alumno->direccion; ?></td>
 					<td><?php echo $alumno->telefono; ?></td>
 					<td><?php echo $alumno->nacimiento; ?></td>
@@ -62,10 +63,11 @@
 			</tbody>
 		</table>
 
+		</div>
+
 	</div>
 
 
-	<?php require 'views/sidebar.php' ?>
 
 	<script type="text/javascript" src="<?php echo constant('URL').'public/js/main.js'  ?>"></script>
 

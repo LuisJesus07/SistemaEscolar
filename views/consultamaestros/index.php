@@ -7,7 +7,10 @@
 
 	<?php require 'views/header.php' ?>
 
-	<div class="opciones">
+	<div class="opciones datos-tabla">
+
+		<div class="panel">
+
 		<h1>Maestros</h1>
 		<div id="respuesta"  class="center"></div>
 
@@ -16,12 +19,13 @@
 			<thead>
 				<tr>
 					<th>Matricula</th>
-					<th>Nombre</th>
-					<th>Apellidos</th>
+					<th>Nombre Maestro</th>
 					<th>Direccion</th>
 					<th>Telefono</th>
 					<th>Nacimiento</th>
 					<th>Sexo</th>
+					<th>Editar</th>
+					<th>Eliminar</th>
 				</tr>
 			</thead>
 
@@ -38,8 +42,7 @@
 				<!--  para eliminar un nodo se nesesita conocer el padre--> 
 				<tr id="fila-<?php echo $maestro->matricula ?>">
 					<td><?php echo $maestro->matricula; ?></td>
-					<td><?php echo $maestro->nombre; ?></td>
-					<td><?php echo $maestro->apellidos; ?></td>
+					<td><?php echo $maestro->nombre ." ".$maestro->apellidos; ?></td>
 					<td><?php echo $maestro->direccion; ?></td>
 					<td><?php echo $maestro->telefono; ?></td>
 					<td><?php echo $maestro->nacimiento; ?></td>
@@ -54,10 +57,11 @@
 			</tbody>
 		</table>
 
+		</div>
+
 	</div>
 
 
-	<?php require 'views/sidebar.php' ?>
 
 	<script type="text/javascript" src="<?php echo constant('URL') ?>public/js/main.js"></script>
 

@@ -16,7 +16,9 @@ class ConsultaMaestrosModel extends Model{
 
 		try{
 
-			$query = $this->db->connect()->query('SELECT * FROM profesores');
+			$query = $this->db->connect()->query('SELECT PRO.matricula,PRO.nombre,PRO.apellidos,PRO.direccion,PRO.telefono,PRO.nacimiento,SEX.sexo
+				FROM profesores AS PRO
+				INNER JOIN sexo AS SEX ON SEX.idSexo=PRO.idSexo; ');
 
 			while($row = $query->fetch()){
 				$maestro = new Maestro();
@@ -27,7 +29,7 @@ class ConsultaMaestrosModel extends Model{
 				$maestro->direccion = $row['direccion'];
 				$maestro->telefono = $row['telefono'];
 				$maestro->nacimiento = $row['nacimiento'];
-				$maestro->sexo = $row['idSexo'];
+				$maestro->sexo = $row['sexo'];
 
 				array_push($maestros, $maestro);
 			}

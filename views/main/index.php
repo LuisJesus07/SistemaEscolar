@@ -24,7 +24,7 @@
 				<div class="opcion">
 					<img src="<?php echo constant('URL') ?>public/img/calificaciones.png">
 
-					<input type="button" name="" value="Calificaciones">
+					<a href="<?php echo constant('URL') ?>calificaciones"><input type="button" name="" value="Calificaciones"></a>
 				</div>
 
 				<div class="opcion">
@@ -51,18 +51,18 @@
 					<a href="<?php echo constant('URL') ?>materias"><input type="button" name="" value="Materias" ></a>
 				</div>
 
-				<div class="opcion">
+				<!--<div class="opcion">
 					<img src="<?php echo constant('URL') ?>public/img/alumnos.png">
 
 					<a href="<?php echo constant('URL') ?>consulta"><input type="button" name="" value="Consultar Alumnos"></a>
 					
-				</div>
+				</div>-->
 
-				<div class="opcion">
+				<!--<div class="opcion">
 					<img src="<?php echo constant('URL') ?>public/img/maestros.png">
 
 					<a href="<?php echo constant('URL') ?>consultaMaestros"><input type="button" name="" value="Consultar Maestros"></a>
-				</div>
+				</div>-->
 				
 			</div>
 			

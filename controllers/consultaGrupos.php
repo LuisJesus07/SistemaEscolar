@@ -4,6 +4,8 @@ class ConsultaGrupos extends Controller{
 
 	function __construct(){
 		parent::__construct();
+
+		$this->view->mensajeError = "";
 	}
 
 	function renderVista(){
@@ -40,7 +42,13 @@ class ConsultaGrupos extends Controller{
 										   'generacion' => $generacion]); 
 
 
-		$this->view->alumnos = $alumnos;
+		if(!empty($alumnos)){
+			$this->view->alumnos = $alumnos;
+		}else{
+			$this->view->mensajeError = "El grupo ".$grado."°".$nombreGrupo." Generacion ".$generacion." no tiene alumnos aun.";
+		}
+
+		
 
 		$this->renderVista();
 

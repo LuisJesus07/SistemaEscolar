@@ -16,6 +16,12 @@ class Registrar extends Controller{
 
 	function renderVista(){
 
+		$this->view->render('registrar/menu');
+
+	}
+
+	function renderRegistrarAlumno(){
+
 		//obtener los grupos para el CB
 		$grupos = $this->model->getGrupos();
 		//pasarle los grupos a la vista
@@ -28,9 +34,6 @@ class Registrar extends Controller{
 		$this->view->generaciones = $generaciones;
 
 		$this->view->render('registrar/index');
-
-
-
 	}
 
 	function registrarAlumno(){
@@ -72,7 +75,7 @@ class Registrar extends Controller{
 		$this->view->mensajeError = $mensajeError;
 		$this->view->mensajeExito = $mensajeExito;
 
-		$this->renderVista();
+		$this->renderRegistrarAlumno();
 
 
 		

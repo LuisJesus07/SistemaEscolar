@@ -165,7 +165,7 @@
 
 .busqueda{
 	font-family: 'Open Sans', Tahoma, Georgia, "Times New Roman", Times, serif;
-	margin-left: 32%;
+	margin-left: 20%;
 	margin-top: 2%;
 	margin-bottom: 2%;
 }
@@ -174,7 +174,7 @@
 	font-family: 'Open Sans', Tahoma, Georgia, "Times New Roman", Times, serif;
 	background-color: #eceff1;
 	width: 100px;
-	height: 20px;
+	height: 33px;
 	border-width: 1px;
 	cursor: pointer;
 }
@@ -183,6 +183,7 @@
 	margin: auto;
 	width: 90%;
 	background: #cadbeb;
+	margin-bottom: 3%;
 	box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.1);
 
 }
@@ -274,4 +275,14 @@
 	background-color: #dff0d8;
 	border: 1px solid #008100;
 	color: #3c763d;
+}
+
+/* consultacalificaciones */
+
+.datos-tabla{
+	width: 100%;
+}
+
+.busqueda-calificaciones label{
+	margin-left: 28%;
 }

@@ -13,7 +13,13 @@ class Maestros extends Controller{
 
 	function renderVista(){
 
+		$this->view->render('maestros/menu');
+	}
+
+	function renderRegistrarMaestro(){
+
 		$this->view->render('maestros/index');
+
 	}
 
 
@@ -49,7 +55,7 @@ class Maestros extends Controller{
 		$this->view->mensajeError = $mensajeError;
 		$this->view->mensajeExito = $mensajeExito;
 
-		$this->renderVista();
+		$this->renderRegistrarMaestro();
 
 	}
 
