@@ -95,8 +95,12 @@ class Consulta extends Controller{
 			$mensajeError = "No se pudo actualizar el alumno";
 		}
 
-		$this->view->mensajeError = $mensajeError;
-		$this->view->mensajeExito = $mensajeExito;
+		if(!empty($mensajeError)){
+			$this->view->mensajeError = $mensajeError;
+		}else{
+			$this->view->mensajeExito = $mensajeExito;
+		}
+		
 
 		$this->view->render('consulta/detalle');
 

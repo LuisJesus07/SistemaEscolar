@@ -47,8 +47,8 @@
 					<td><?php echo $maestro->telefono; ?></td>
 					<td><?php echo $maestro->nacimiento; ?></td>
 					<td><?php echo $maestro->sexo; ?></td>
-					<td><a href="<?php echo constant('URL') . 'consultaMaestros/verMaestro/' . $maestro->matricula ?>"> Editar</a></td>	
-					<td><button class="btn-eliminar" data-rol="maestro" data-matricula="<?php  echo $maestro->matricula ?>">Eliminar</button></td>
+					<td><a class="btn-consulta" href="<?php echo constant('URL') . 'consultaMaestros/verMaestro/' . $maestro->matricula ?>"><i class="fas fa-edit"></i></a></td>	
+					<td><a class="btn-eliminar" data-rol="maestro" data-matricula="<?php  echo $maestro->matricula ?>"><i class="fas fa-trash-alt"></i></a></td>
 					
 				</tr>
 

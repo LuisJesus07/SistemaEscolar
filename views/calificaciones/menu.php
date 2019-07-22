@@ -22,7 +22,7 @@
 			<div class="opcion">
 				<img src="<?php echo constant('URL') ?>public/img/maestros.png">
 
-				<a href="<?php echo constant('URL') ?>consultaMaestros"><input type="button" name="" value="Consultar Maestros"></a>
+				<a href="<?php echo constant('URL') ?>calificaciones/renderAlumnosMateria"><input type="button" name="" value="Asignar Calificacion"></a>
 			</div>
 			
 		</div>

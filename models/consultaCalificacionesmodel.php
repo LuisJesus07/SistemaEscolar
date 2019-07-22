@@ -56,6 +56,10 @@ class ConsultaCalificacionesModel extends Model{
 			return [];
 		}
 	}
+
+
+	
+
 }
 
 ?>

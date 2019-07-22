@@ -197,14 +197,18 @@
 }
 
 .tabla tbody tr td{
+	height: 35px;
 	background-color: #eaeef0;
+	text-align: justify;
 	font-family: 'Open Sans', Tahoma, Georgia, "Times New Roman", Times, serif;
 }
+
+
 
 /* consulta alumno */
 
 .consulta-alumno{
-	width: 100%;
+	width: 95%;
 	margin-top: 3%;
 	margin: none;
 }
@@ -258,6 +262,25 @@
 	margin-left: 70%;
 }
 
+.btn-eliminar i{
+	font-size: 19px;
+	align-items: center;
+	padding-left: 35%;
+	color: #e34724;
+	background-color: #eaeef0;
+	cursor: pointer;
+}
+
+.btn-consulta i{
+	font-size: 19px;
+	align-items: center;
+	padding-left: 35%;
+	color: #ffc109;
+	background-color: #eaeef0;
+	cursor: pointer;
+	
+}
+
 .error{
 	margin:auto;
 	text-align: center;
@@ -281,6 +304,11 @@
 
 .datos-tabla{
 	width: 100%;
+}
+
+.tabla-calif tbody tr td{
+	text-align: center;
+
 }
 
 .busqueda-calificaciones label{

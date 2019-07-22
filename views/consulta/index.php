@@ -53,8 +53,8 @@
 					<td><?php echo $alumno->grado; ?></td>
 					<td><?php echo $alumno->grupo; ?></td>
 					<td><?php echo $alumno->generacion; ?></td>
-					<td><a href="<?php echo constant('URL') . 'consulta/verAlumno/' . $alumno->matricula ?>"> Editar</a></td>	
-					<td><button class="btn-eliminar" data-matricula="<?php  echo $alumno->matricula ?>">Eliminar</button></td>
+					<td><a class="btn-consulta" href="<?php echo constant('URL') . 'consulta/verAlumno/' . $alumno->matricula ?>"> <i class="fas fa-edit"></i></a></td>	
+					<td><a class="btn-eliminar" data-matricula="<?php  echo $alumno->matricula ?>"><i class="fas fa-trash-alt"></i></a></td>
 					
 				</tr>
 

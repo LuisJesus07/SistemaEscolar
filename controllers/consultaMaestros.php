@@ -78,8 +78,12 @@ class ConsultaMaestros extends Controller{
 			$mensajeError = "No se pudo actualizar al maestro";
 		}
 
-		$this->view->mensajeError = $mensajeError;
-		$this->view->mensajeExito = $mensajeExito;
+		if(!empty($mensajeError)){
+			$this->view->mensajeError = $mensajeError;
+		}else{
+			$this->view->mensajeExito = $mensajeExito;
+		}
+
 
 		$this->view->render('consultamaestros/detalle');
 	}

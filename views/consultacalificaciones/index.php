@@ -23,7 +23,7 @@
 		</form>
 
 
-		<table  class="tabla">
+		<table  class="tabla tabla-calif">
 			<thead>
 				<tr>
 					<th>Generacion</th>

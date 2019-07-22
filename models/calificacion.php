@@ -2,6 +2,7 @@
 
 class Calificacion{
 
+	public $idCalificacion;
 	public $generacion;
 	public $grado;
 	public $nombreGrupo;
