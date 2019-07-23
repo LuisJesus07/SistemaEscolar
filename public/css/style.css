@@ -314,3 +314,24 @@
 .busqueda-calificaciones label{
 	margin-left: 28%;
 }
+
+/*calificaciones index */
+.datos-materia{
+	width: 70%;
+	height: 115px;
+	margin-bottom: 2%;
+}
+.datos-materia h2{
+	padding-left: 3%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	margin-bottom: 1%;
+	background-color: #eceff1;
+	border-bottom: solid 1px #eceff1;
+
+
+}
+
+.datos-materia label{
+	padding-bottom: : 2%;
+}

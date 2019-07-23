@@ -11,6 +11,7 @@ class Calificacion{
 	public $apellidos;
 	public $nombreMateria;
 	public $nombreMaestro;
+	public $apellidosMaestro;
 	public $primerBimestre;
 	public $segundoBimestre;
 	public $tercerBimestre;

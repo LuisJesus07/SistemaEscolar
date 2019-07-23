@@ -2,6 +2,7 @@
 
 class Alumno{
 
+	public $idAlumno;
 	public $matricula;
 	public $nombre;
 	public $apellidos;

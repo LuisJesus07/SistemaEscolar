@@ -1,6 +1,8 @@
 <?php
 include_once 'models/calificacion.php';
-
+include_once 'models/generacion.php';
+include_once 'models/materia.php';
+include_once 'models/grupo.php';
 
 class CalificacionesModel extends Model{
 
@@ -16,7 +18,7 @@ class CalificacionesModel extends Model{
 		try{
 
 			$query = $this->db->connect()->prepare('SELECT CAL.idCalificacion,GEN.generacion,GRA.grado,GRU.nombreGrupo,ALU.matricula,
-				ALU.nombre,ALU.apellidos,MAT.nombreMateria,PRO.nombre AS "nombreMaestro",
+				ALU.nombre,ALU.apellidos,MAT.nombreMateria,PRO.nombre AS "nombreMaestro",PRO.apellidos AS "apellidosMaestro",
 				CAL.primerBimestre,CAL.segundoBimestre,CAL.tercerBimestre,CAL.cuartoBimestre,CAL.quintoBimestre
 				FROM alumnos AS ALU
 				INNER JOIN generaciones AS GEN ON GEN.idGeneracion=ALU.idGeneracion
@@ -42,6 +44,7 @@ class CalificacionesModel extends Model{
 				$alumno->apellidos = $row['apellidos'];
 				$alumno->nombreMateria = $row['nombreMateria'];
 				$alumno->nombreMaestro = $row['nombreMaestro'];
+				$alumno->apellidosMaestro = $row['apellidosMaestro'];
 
 				array_push($alumnos, $alumno);
 			}
@@ -102,6 +105,84 @@ class CalificacionesModel extends Model{
 		}catch(PDOException $e){
 			return false;
 		}
+	}
+
+
+	//obtener datos de los select
+
+	function getGeneraciones(){
+
+		$generaciones = [];
+
+		try{
+
+			$query = $this->db->connect()->query('SELECT * FROM generaciones');
+
+			while ($row = $query->fetch()) {
+				$generacion = new Generacion();
+
+				$generacion->generacion = $row['generacion'];
+
+				array_push($generaciones, $generacion);
+			}
+
+			return $generaciones;
+
+		}catch(PDOException $e){
+
+			return [];
+		}
+	}
+
+
+	function getMaterias(){
+
+		$materias = [];
+
+		try{
+			$query = $this->db->connect()->query('SELECT * FROM materias');
+
+			while ($row = $query->fetch()) {
+				$materia = new Materia();
+
+				$materia->nombreMateria = $row['nombreMateria'];
+
+				array_push($materias,$materia);
+			}
+
+			return $materias;
+
+		}catch(PDOException $e){
+			return [];
+		}
+
+	}
+
+	function getGrupos(){
+
+		$grupos = [];
+
+		try{
+
+			$query = $this->db->connect()->query('SELECT GRU.idGrupo, GRA.grado, GRU.nombreGrupo
+												  FROM grupos AS GRU
+												  INNER JOIN grados AS GRA ON GRA.idGrado=GRU.idGrado;');
+
+			while($row = $query->fetch()){
+				$grupo = new Grupo();
+
+				$grupo->nombreGrupo = $row['nombreGrupo'];
+				$grupo->grado = $row['grado'];
+
+				array_push($grupos, $grupo);
+			}
+
+			return $grupos;
+
+		}catch(PDOException $e){
+			return [];
+		}
+
 	}
 
 

@@ -17,16 +17,55 @@
 				<label>Ingrese la genreracion,el grupo y la materia</label><br>
 
 				<label>Generacion</label>
-				<input type="text" name="generacion">
+				<select name="generacion">
+					<?php
+						foreach($this->generaciones as $row){
+							$generacion = new Generacion();
+							$generacion = $row;
 
-				<label>Grado</label>
+					?>
+
+					<option><?php echo $generacion->generacion ?></option>
+
+					<?php } ?>
+					
+				</select>
+
+				<!--<label>Grado</label>
 				<input type="text" name="grado"><br>
 
 				<label>Grupo</label>
-				<input type="text" name="nombreGrupo">
+				<input type="text" name="nombreGrupo">-->
+
+				<label>Grupo</label>
+				<select name="grupo">
+					<?php
+						foreach($this->grupos as $row){
+							$grupo = new Grupo();
+							$grupo = $row;
+						
+					?>
+
+					<option><?php echo $grupo->grado."°".$grupo->nombreGrupo;  ?></option>
+
+					<?php } ?>
+					
+				</select>
 
 				<label>Materia</label>
-				<input type="text" name="materia">
+				<select name="materia">
+					<?php
+						foreach($this->materias as $row){
+							$materia = new Materia();
+							$materia = $row;
+						
+					?>
+
+					<option><?php echo $materia->nombreMateria; ?></option>
+
+					<?php } ?>
+					
+				</select>
 
 				<input type="submit" name="" value="Ver Materia">
 				
@@ -37,31 +76,42 @@
 				if(isset($this->alumnosMateria)){
 			?>
 
-			<div class="datos-materia">
+			<div class="panel datos-materia">
 
-				<label>Generacion :</label>
+				<h2>Materia</h2>
+
+				<label><strong> Generacion :</strong></label>
 				<label><?php echo $this->generacion; ?></label>
 
-				<label>Grado :</label>
-				<label><?php echo $this->grado; ?></label><br>
+				<label><strong> Grupo :</strong></label>
+				<label><?php echo $this->grado."°". $this->nombreGrupo; ?></label><br>
 
-				<label>Grupo :</label>
-				<label><?php echo $this->nombreGrupo; ?></label>
 
-				<label>Materia :</label>
+				<label><strong> Materia :</strong></label>
 				<label><?php echo $this->materia; ?></label>
+
+				<?php 
+					foreach($this->alumnosMateria as $row){
+					$alumno = new Calificacion();
+					$alumno = $row;
+
+				?>
+
+					<label><strong> Maestro(a) :</strong></label>
+					<label><?php echo $alumno->nombreMaestro." ". $alumno->apellidosMaestro; ?></label>
+
+				<?php break; } ?>
+
 				
 			</div>
 
 
-			<table  class="tabla tabla-calif">
+			<table  class="tabla">
 			<thead>
 				<tr>
-					<th>idCalificacion</th>
 					<th>Matricula</th>
 					<th>Nombre Alumno</th>
-					<th>Maestro</th>
-					<th>Ver</th>
+					<th>Modificar</th>
 					
 				</tr>
 			</thead>
@@ -78,10 +128,8 @@
 				
 					<!--  para eliminar un nodo se nesesita conocer el padre--> 
 					<tr id="fila">
-						<td><?php echo $alumno->idCalificacion; ?></td>
 						<td><?php echo $alumno->matricula; ?></td>
 						<td><?php echo $alumno->nombre." ".$alumno->apellidos; ?></td>
-						<td><?php echo $alumno->nombreMaestro; ?></td>
 						<td><a class="btn-consulta" href="<?php echo constant('URL') . 'calificaciones/verAlumnoMateria/' . $alumno->idCalificacion .'/'. $alumno->nombre ?>"> <i class="fas fa-edit"></i></a></td>
 										
 					</tr>

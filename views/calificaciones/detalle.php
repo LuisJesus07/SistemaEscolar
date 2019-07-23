@@ -30,9 +30,19 @@
 				<label>Quinto Bimestre :</label>
 				<input type="text" name="quintoBimestre" value="<?php echo $this->calificaciones->quintoBimestre ?>">
 
+				<?php if(!empty($this->mensajeExito)){ ?>
+
+					<div class="error exito"><?php echo $this->mensajeExito; ?></div>
+
+				<?php } ?>
+
 				<input type="submit" class="btn-registrar" value="Registrar">
+
+				
 				
 			</form>
+
+			
 			
 		</div>
 		

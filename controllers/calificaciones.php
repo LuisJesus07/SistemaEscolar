@@ -15,6 +15,19 @@ class Calificaciones extends Controller{
 
 	function renderAlumnosMateria(){
 
+		//obtener generaciones
+		$generaciones = $this->model->getGeneraciones();
+		$this->view->generaciones = $generaciones;
+
+		//obtener grupos
+		$grupos = $this->model->getGrupos();
+		$this->view->grupos = $grupos;
+
+
+		//obtener materias
+		$materias = $this->model->getMaterias();
+		$this->view->materias = $materias;
+
 		$this->view->render('calificaciones/index');
 	}
 
@@ -22,9 +35,13 @@ class Calificaciones extends Controller{
 	function verAlumnosMateria(){
 
 		$generacion = $_POST['generacion'];
-		$grado = $_POST['grado'];
-		$nombreGrupo = $_POST['nombreGrupo'];
 		$materia = $_POST['materia'];
+		$grupo = $_POST['grupo'];
+
+		$grupo = explode("°", $grupo);
+
+		$grado = $grupo[0];
+		$nombreGrupo = $grupo[1];
 
 		$alumnosMateria = $this->model->getAlumnosMateria(['generacion' => $generacion,
 														   'grado' => $grado,
