@@ -10,6 +10,15 @@ class InscribirAlumnoMateria extends Controller{
 
 	function renderVista(){
 
+		//obtener generaciones
+		$generaciones = $this->model->getGeneraciones();
+		$this->view->generaciones = $generaciones;
+
+
+		//obtener grupos
+		$grupos = $this->model->getGrupos();
+		$this->view->grupos = $grupos;
+
 		//obtener clases
 		$clases = $this->model->getClases();
 		$this->view->clases = $clases;
@@ -19,23 +28,44 @@ class InscribirAlumnoMateria extends Controller{
 
 	function registrarAlumnoMateria(){
 
-		$matricula = $_POST['matricula'];
+		$generacion = $_POST['generacion'];
+		$grupo = $_POST['grupo'];
 		$clase = $_POST['clase'];
 
-		//obtenemos el id del alumno 
-		$idAlumno = $this->model->getIdAlumno(['matricula' => $matricula]);
+		$grupo = explode("°", $grupo);
+
+		$grado = $grupo[0];
+		$nombreGrupo = $grupo[1];
+
+		//obtenemos el id de todos los alumnos del grupo seleccionado
+		$idAlumnos = $this->model->getAllIdAlumnos(['generacion' => $generacion,
+													'grado' => $grado,
+													'nombreGrupo' => $nombreGrupo]);
 
 
-		if($this->model->insertAlumnoMateria(['idAlumno' => $idAlumno,
+
+		include_once 'models/idAlumno.php';
+		//recorremos el arreglo de idAlumnos e inscribimos a tosdos los alumnos del grupo a la clase seleccionada
+		foreach($idAlumnos as $row) {
+			$idAlumno = new IdAlumno();
+			$idAlumno = $row;
+
+			if($this->model->insertAlumnoMateria(['idAlumno' => $idAlumno->idAlumno,
 											  'clase' => $clase])){
 
-			$this->view->mensajeExito = "Alumno inscrito correctamente";
+				$this->view->mensajeExito = "Grupo inscrito correctamente a la clase";
 
-		}else{
-
-			$this->view->mensajeError = "No se pudo inscribir al alumno";
-
+			}else{
+				$this->view->mensajeError = "No se pudo inscribir el grupo a la clase";
+			}
+			
 		}
+
+
+		
+
+
+
 
 		$this->renderVista();
 	}

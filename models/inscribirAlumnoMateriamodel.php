@@ -1,6 +1,8 @@
 <?php
-include_once 'models/alumno.php';
 include_once 'models/clase.php';
+include_once 'models/generacion.php';
+include_once 'models/grupo.php';
+include_once 'models/idalumno.php';
 class InscribirAlumnoMateriaModel extends Model{
 
 	function __construct(){
@@ -11,6 +13,8 @@ class InscribirAlumnoMateriaModel extends Model{
 
 		try{
 
+			
+			
 			$query = $this->db->connect()->prepare('INSERT INTO calificaciones(primerBimestre,segundoBimestre,tercerBimestre,cuartoBimestre,quintoBimestre,idAlumno,idClase) 
 				VALUES("0","0","0","0","0",:idAlumno,:clase)');
 
@@ -57,22 +61,84 @@ class InscribirAlumnoMateriaModel extends Model{
 		}
 	}
 
-	function getIdAlumno($datos){
+	function getGeneraciones(){
+		$generaciones = [];
 
 		try{
 
-			$query = $this->db->connect()->prepare('SELECT idAlumno FROM alumnos WHERE matricula=:matricula');
-
-			$query->execute(['matricula' => $datos['matricula']]);
+			$query = $this->db->connect()->query('SELECT * FROM generaciones');
 
 			while($row = $query->fetch()){
-				$idAlumno = $row['idAlumno'];
+				$generacion = new Generacion();
+
+				$generacion->generacion = $row['generacion'];
+
+				array_push($generaciones, $generacion);
 			}
 
-			return $idAlumno;
+			return $generaciones;
 
 		}catch(PDOException $e){
-			return false;
+			return [];
+		}
+	}
+
+	function getGrupos(){
+		$grupos = [];
+
+		try{
+
+			$query = $this->db->connect()->query('SELECT GRU.idGrupo, GRA.grado, GRU.nombreGrupo
+												  FROM grupos AS GRU
+												  INNER JOIN grados AS GRA ON GRA.idGrado=GRU.idGrado;');
+
+			while($row = $query->fetch()){
+				$grupo = new Grupo();
+
+				$grupo->grado = $row['grado'];
+				$grupo->nombreGrupo = $row['nombreGrupo'];
+
+				array_push($grupos, $grupo);
+			}
+
+			return $grupos;
+
+		}catch(PDOException $e){
+			return [];
+		}
+	}
+
+	
+
+	function getAllIdAlumnos($datos){
+
+		$idAlumnos = [];
+
+		try{
+
+			$query = $this->db->connect()->prepare('SELECT Alu.idAlumno
+													FROM alumnos AS ALU
+													INNER JOIN generaciones AS GEN ON GEN.idGeneracion=ALU.idGeneracion
+													INNER JOIN grupos AS GRU ON GRU.idGrupo=ALU.idGrupo
+													INNER JOIN grados AS GRA ON GRA.idGrado=GRU.idGrado
+													WHERE GRA.grado = :grado AND GRU.nombreGrupo=:nombreGrupo AND GEN.generacion=:generacion');
+			$query->execute(['grado' => $datos['grado'],
+							 'nombreGrupo' => $datos['nombreGrupo'],
+							 'generacion' => $datos['generacion']]);
+
+			while($row = $query->fetch()){
+				$idAlumno = new idAlumno();
+
+				$idAlumno->idAlumno = $row['idAlumno'];
+
+				array_push($idAlumnos, $idAlumno);
+
+			}
+
+			return $idAlumnos;
+
+		}catch(PDOException $e){
+			return [];
 		}
 	}
 

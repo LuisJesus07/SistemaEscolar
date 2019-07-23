@@ -15,8 +15,36 @@
 
 			<form method="POST" action="<?php echo constant('URL') .'inscribirAlumnoMateria/registrarAlumnoMateria' ?>">
 
-				<label>Matricula alumno :</label>
-				<input type="text" name="matricula"><br>
+
+				<label>Generaciones :</label>
+				<select name="generacion">
+					<?php
+					foreach($this->generaciones as $row){
+						$generacion = new Generacion();
+						$generacion = $row;
+					
+					?>
+
+					<option><?php echo $generacion->generacion; ?></option>
+
+					<?php } ?>
+				</select>
+
+				<!--<input type="text" name="grupo"><br>-->
+				<label>Grupo</label>
+				<select name="grupo">
+					<?php
+						foreach($this->grupos as $row){
+							$grupo = new Grupo();
+							$grupo = $row;
+						
+					?>
+
+					<option><?php echo $grupo->grado."°".$grupo->nombreGrupo;  ?></option>
+
+					<?php } ?>
+					
+				</select><br>
 		
 				<label>Clase :</label>
 				<select name="clase">
