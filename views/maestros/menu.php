@@ -15,13 +15,13 @@
 
 
 			<div class="opcion">
-				<img src="<?php echo constant('URL') ?>public/img/maestros.png">
+				<img src="<?php echo constant('URL') ?>public/img/registrar.png">
 
-				<a href="<?php echo constant('URL') ?>maestros/renderRegistrarMaestro"><input type="button" name="" value="Maestros"></a>
+				<a href="<?php echo constant('URL') ?>maestros/renderRegistrarMaestro"><input type="button" name="" value="Registrar Maestro"></a>
 			</div>
 
 			<div class="opcion">
-				<img src="<?php echo constant('URL') ?>public/img/maestros.png">
+				<img src="<?php echo constant('URL') ?>public/img/consultar.png">
 
 				<a href="<?php echo constant('URL') ?>consultaMaestros"><input type="button" name="" value="Consultar Maestros"></a>
 			</div>

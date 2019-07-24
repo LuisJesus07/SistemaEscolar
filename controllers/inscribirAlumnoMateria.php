@@ -45,7 +45,7 @@ class InscribirAlumnoMateria extends Controller{
 
 
 		include_once 'models/idAlumno.php';
-		//recorremos el arreglo de idAlumnos e inscribimos a tosdos los alumnos del grupo a la clase seleccionada
+		//recorremos el arreglo de objetos idAlumnos e inscribimos a tosdos los alumnos del grupo a la clase seleccionada
 		foreach($idAlumnos as $row) {
 			$idAlumno = new IdAlumno();
 			$idAlumno = $row;

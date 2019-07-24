@@ -11,7 +11,7 @@
 
 		<h1>Error 404: No se encontro la pagina</h1>
 
-		<div class="error">
+		<div class="error-404">
 			<img src="<?php constant('URL') ?>public/img/error-404-2.png">
 		</div>
 		

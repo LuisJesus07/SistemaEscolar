@@ -20,13 +20,13 @@
 			</div>
 
 			<div class="opcion">
-				<img src="<?php echo constant('URL') ?>public/img/alumnos.png">
+				<img src="<?php echo constant('URL') ?>public/img/clase.png">
 
-				<a href="<?php echo constant('URL') ?>materias/renderRegistrarClases"><input type="button" name="" value="Registrar clases" ></a>
+				<a href="<?php echo constant('URL') ?>materias/renderRegistrarClases"><input type="button" name="" value="Registrar clase" ></a>
 			</div>
 
 			<div class="opcion">
-				<img src="<?php echo constant('URL') ?>public/img/alumnos.png">
+				<img src="<?php echo constant('URL') ?>public/img/consultar.png">
 
 				<a href="<?php echo constant('URL') . 'consultaClases/verClases' ?>"><input type="button" name="" value="Consultar clases" ></a>
 			</div>

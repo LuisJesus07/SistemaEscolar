@@ -52,7 +52,7 @@
 				</div>
 
 				<div class="opcion">
-					<img src="<?php echo constant('URL') ?>public/img/alumnos.png">
+					<img src="<?php echo constant('URL') ?>public/img/inscribir.png">
 
 					<a href="<?php echo constant('URL') ?>inscribirAlumnoMateria"><input type="button" name="" value="Inscribirse Materia"></a>
 					
