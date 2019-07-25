@@ -15,22 +15,47 @@
 
 		<form method="POST" class="busqueda-calificaciones" action="<?php echo constant('URL'). 'consultaCalificaciones/verCalificaciones' ?>">
 
-			<label>Matricula</label>
+			<label>Matricula Alumno: </label>
 			<input type="text" name="matricula">
 
 			<input type="submit" name="" value="Ver calificaciones">
 			
 		</form>
 
+		<?php if(isset($this->calificaciones)){ ?>
+
+		<div class="panel datos-materia">
+
+			<h2>Alumno</h2>
+
+				<?php 
+					foreach($this->calificaciones as $row){
+					$alumno = new Calificacion();
+					$alumno = $row;
+
+				?>
+					<label><strong> Matricula :</strong></label>
+					<label><?php echo $alumno->matricula; ?></label>
+
+					<label><strong>Nombre Alumno :</strong></label>
+					<label><?php echo $alumno->nombre." ".$alumno->apellidos; ?></label><br>
+
+					<label><strong> Generacion :</strong></label>
+					<label><?php echo $alumno->generacion; ?></label>
+
+					<label><strong> Grupo :</strong></label>
+					<label><?php echo $alumno->grado."°". $alumno->nombreGrupo; ?></label><br>
+
+				<?php break; } ?>
+			
+		</div>
+
+		<?php } ?>
+
 
 		<table  class="tabla tabla-calif">
 			<thead>
 				<tr>
-					<th>Generacion</th>
-					<th>Grado</th>
-					<th>Grupo</th>
-					<th>Matricula</th>
-					<th>Nombre Alumno</th>
 					<th>Materia</th>
 					<th>Maestro</th>
 					<th>Primer Bimestre</th>
@@ -57,11 +82,6 @@
 					?>
 					<!--  para eliminar un nodo se nesesita conocer el padre--> 
 					<tr id="fila">
-						<td><?php echo $calificacion->generacion; ?></td>
-						<td><?php echo $calificacion->grado; ?></td>
-						<td><?php echo $calificacion->nombreGrupo; ?></td>
-						<td><?php echo $calificacion->matricula; ?></td>
-						<td><?php echo $calificacion->nombre." ".$calificacion->apellidos; ?></td>
 						<td><?php echo $calificacion->nombreMateria; ?></td>
 						<td><?php echo $calificacion->nombreMaestro; ?></td>
 						<td><?php echo $calificacion->primerBimestre; ?></td>

@@ -4,7 +4,6 @@
 	margin: 0;
 	padding: 0;
 	color: #000;
-	background: #fff;
 
 	
 }
@@ -143,12 +142,19 @@
 	cursor: pointer;
 	margin-left: 12%;
 	margin-top: 3%;
-	border: 2px solid #D6D2D2;
+	border: 2px solid #757575;
     width: 150px;
     padding: 1em;
     color: black;
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.1);
+    background-color: white;
     text-decoration: none;
-    transition: all linear .3s;
+}
+
+.opcion input:hover{
+	background: #d5dee6;
+	transition: all linear .3s;
+	transform: scale(1.1);
 }
 
 /* Error */
@@ -182,7 +188,7 @@
 .tabla{
 	margin: auto;
 	width: 90%;
-	background: #cadbeb;
+	background: #d5dee6;
 	margin-bottom: 3%;
 	box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.1);
 
@@ -198,9 +204,12 @@
 
 .tabla tbody tr td{
 	height: 35px;
-	background-color: #eaeef0;
 	text-align: justify;
 	font-family: 'Open Sans', Tahoma, Georgia, "Times New Roman", Times, serif;
+}
+
+tr:nth-child(even){
+	background-color: #eaeef0;
 }
 
 
@@ -267,7 +276,6 @@
 	align-items: center;
 	padding-left: 35%;
 	color: #e34724;
-	background-color: #eaeef0;
 	cursor: pointer;
 }
 
@@ -276,10 +284,11 @@
 	align-items: center;
 	padding-left: 35%;
 	color: #ffc109;
-	background-color: #eaeef0;
 	cursor: pointer;
 	
 }
+
+
 
 .error{
 	margin:auto;
