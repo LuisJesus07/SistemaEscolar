@@ -25,15 +25,15 @@
 						</li>
 
 						<li>
-							<a href="<?php echo constant('URL') ?>registrar">Registrar</a>
+							<a href="<?php echo constant('URL') ?>registrar">Alumnos</a>
 						</li>
 
 						<li>
-							<a href="">Opcion 1</a>
+							<a href="<?php echo constant('URL') ?>maestros">Maestros</a>
 						</li>
 
 						<li>
-							<a href="">Opcion 1</a>
+							<a href="<?php echo constant('URL') ?>calificaciones">Calificaciones</a>
 						</li>
 
 						<li>
@@ -50,7 +50,7 @@
 			</div>
 
 			<div class="logo">
-				<img src="<?php echo constant('URL') ?>public/img/logouabcs1.png">
+				<a href="<?php echo constant('URL') ?>main"><img src="<?php echo constant('URL') ?>public/img/logouabcs1.png"></a>
 			</div>
 			
 			

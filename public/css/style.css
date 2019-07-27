@@ -152,8 +152,9 @@
 }
 
 .opcion input:hover{
-	background: #d5dee6;
-	transition: all linear .3s;
+	background: #0d72b9;
+	color: white;
+	transition: all linear .2s;
 	transform: scale(1.1);
 }
 
@@ -343,4 +344,67 @@ tr:nth-child(even){
 
 .datos-materia label{
 	padding-bottom: : 2%;
+}
+
+/*consulta credencial*/
+
+.credencial{
+	background-image: url('../img/credencial.jpg');
+	margin: 0 auto;
+	margin-bottom: 2%;
+	width: 1187px;
+	height: 333px;
+	font-size: 18px;
+}
+
+/* info frente */
+.credencial-frente{
+	padding-top: 8%;
+	width: 50%;
+    height: 333px;
+
+}
+
+.foto-credencial{
+	width: 50%;
+}
+
+.foto-credencial img{
+	width: 100px;
+    margin-top: 10%;
+    margin-left: 4%;
+
+}
+
+.foto-credencial label strong{
+    font-size: 14px;
+    padding-left: 4%;
+    color: red;
+}
+
+.info-frente{
+	float: right;
+	width: 50%;
+    margin-right: 20%;
+    margin-top: 5%;
+}
+
+/* info atras */
+.credencial-atras{
+	float: right;
+	padding-top: 8%;
+	width: 50%;
+    height: 333px;
+
+}
+
+.info-atras{
+	width: 50%;
+	margin-left: 15%;
+}
+
+.firma{
+    margin-top: 22&;
+    margin-top: 25%;
+    margin-left: 10%;
 }

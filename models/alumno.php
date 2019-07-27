@@ -14,6 +14,10 @@ class Alumno{
 	public $grupo;
 	public $grado;
 
+	//para la credencial
+	public $firma;
+	public $rutaFoto;
+
 }
 
 ?>
