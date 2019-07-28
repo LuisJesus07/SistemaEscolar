@@ -17,29 +17,29 @@
 			<form method="POST" action="<?php echo constant('URL') .'registrar/registrarAlumno'  ?>">
 
 					<label>Matricula: </label>
-					<input type="text" name="matricula"><br>
+					<input type="text" name="matricula" value="<?php if(!empty($this->matricula)) echo $this->matricula ?>"><br>
 				
 					<label>Nombre: </label>
-					<input type="text" name="nombre">
+					<input type="text" name="nombre" value="<?php if(!empty($this->nombre)) echo $this->nombre ?>">
 
 			
 					<label>Apellidos: </label>
-					<input type="text" name="apellidos"><br>
+					<input type="text" name="apellidos" value="<?php if(!empty($this->apellidos)) echo $this->apellidos ?>"><br>
 					
 
 			
 					<label>Direccion: </label>
-					<input type="text" name="direccion">
+					<input type="text" name="direccion" value="<?php if(!empty($this->direccion)) echo $this->direccion ?>">
 				
 
 			
 					<label>Telefono: </label>
-					<input type="text" name="telefono"><br>
+					<input type="text" name="telefono" value="<?php if(!empty($this->telefono)) echo $this->telefono ?>"><br>
 				
 
 			
 					<label>Nacimiento: </label>
-					<input type="date" name="nacimiento">
+					<input type="date" name="nacimiento" >
 				
 
 			

@@ -12,7 +12,7 @@
 		<div class="panel">
 
 		<h1>Alumnos</h1>
-		<div id="respuesta"  class="center"></div>
+		<div id="respuesta"  class="error exito"></div>
 
 
 		<table class="tabla consulta-alumno">
