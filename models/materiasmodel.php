@@ -102,6 +102,30 @@ class MateriasModel extends Model{
 	}
 
 
+
+	function validarClases($datos){
+
+		try{
+
+			$query = $this->db->connect()->prepare('SELECT count(PRO.matricula)
+											      FROM clases AS CLA
+											      INNER JOIN profesores AS PRO ON  PRO.idProfesor=CLA.idProfesor
+											      INNER JOIN materias AS MAT ON MAT.idMateria=CLA.idMateria
+											      INNER JOIN grados AS GRA ON MAT.idGrado=GRA.idGrado
+											      WHERE PRO.idProfesor=:maestroClase AND MAT.idMateria=:materiaClase ');
+
+			$query->execute(['maestroClase' => $datos['maestroClase'],
+							 'materiaClase' => $datos['materiaClase']]);
+
+			return $query->fetch()[0];
+
+		}catch(PDOException $e){
+			return false;
+		}
+
+	}
+
+
 }
 
 ?>

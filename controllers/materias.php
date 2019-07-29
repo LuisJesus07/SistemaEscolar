@@ -57,16 +57,26 @@ class Materias extends Controller{
 		$nombreMateria = $_POST['materiaClase'];
 		$nombreMaestro = $_POST['maestroClase']; 
 
+		//validar que el maestro no tenga asignada ya esa clase
+		if($this->model->validarClases(['materiaClase' => $nombreMateria,
+										'maestroClase' => $nombreMaestro]) == 1){
 
-		if($this->model->insertClase(['materiaClase' => $nombreMateria,
-									  'maestroClase' => $nombreMaestro])){
+			$this->view->mensajeError = "El profesor ya tiene asignada esa clase";
 
-			$this->view->mensajeExito = "Materia registrada con exito";
-
-		}else{
-			$this->view->mensajeError = "No se pudo registrar la materia";
 		}
 
+		if(empty($this->view->mensajeError)){
+
+			if($this->model->insertClase(['materiaClase' => $nombreMateria,
+									  'maestroClase' => $nombreMaestro])){
+
+			$this->view->mensajeExito = "Clase registrada con exito";
+
+			}else{
+				$this->view->mensajeError = "No se pudo registrar la Clase";
+			}
+
+		}
 
 		$this->renderRegistrarClases();
 

@@ -39,7 +39,7 @@ class Credenciales extends Controller{
 			}
 
 		}else{
-			$this->view->mensajeError = "muy pesada";
+			$this->view->mensajeError = "Imagen muy pesada";
 		}
 
 		//obtener id del alumno mediante la matricula
@@ -47,7 +47,7 @@ class Credenciales extends Controller{
 
 		
 
-
+	
 		if($this->model->insertCredencial(['idAlumno' => $idAlumno,
 										   'rutaFoto' => $rutaFoto,
 										   'firma' => $firma])){
@@ -57,7 +57,7 @@ class Credenciales extends Controller{
 		}else{
 			$this->view->mensajeError = "No se ha podido registrar";
 		}
-
+		
 	
 		$this->renderRegistrar();
 

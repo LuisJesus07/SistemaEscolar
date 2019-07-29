@@ -37,28 +37,43 @@ class InscribirAlumnoMateria extends Controller{
 		$grado = $grupo[0];
 		$nombreGrupo = $grupo[1];
 
-		//obtenemos el id de todos los alumnos del grupo seleccionado
-		$idAlumnos = $this->model->getAllIdAlumnos(['generacion' => $generacion,
-													'grado' => $grado,
-													'nombreGrupo' => $nombreGrupo]);
+
+		//validar que un grupo no se pueda inscribir dos veces en una misma materia
+		if($this->model->validarAlumnosMateria(['generacion' => $generacion,
+												'grado' => $grado,
+												'nombreGrupo' => $nombreGrupo,
+												'clase' => $clase]) >= 1){
+
+			$this->view->mensajeError = "El grupo ya esta inscrito a esa clase";
+
+		}
+
+		if(empty($this->view->mensajeError)){
+
+			//obtenemos el id de todos los alumnos del grupo seleccionado
+			$idAlumnos = $this->model->getAllIdAlumnos(['generacion' => $generacion,
+														'grado' => $grado,
+														'nombreGrupo' => $nombreGrupo]);
 
 
 
-		include_once 'models/idAlumno.php';
-		//recorremos el arreglo de objetos idAlumnos e inscribimos a tosdos los alumnos del grupo a la clase seleccionada
-		foreach($idAlumnos as $row) {
-			$idAlumno = new IdAlumno();
-			$idAlumno = $row;
+			include_once 'models/idAlumno.php';
+			//recorremos el arreglo de objetos idAlumnos e inscribimos a tosdos los alumnos del grupo a la clase seleccionada
+			foreach($idAlumnos as $row) {
+				$idAlumno = new IdAlumno();
+				$idAlumno = $row;
 
-			if($this->model->insertAlumnoMateria(['idAlumno' => $idAlumno->idAlumno,
-											  'clase' => $clase])){
+				if($this->model->insertAlumnoMateria(['idAlumno' => $idAlumno->idAlumno,
+												  'clase' => $clase])){
 
-				$this->view->mensajeExito = "Grupo inscrito correctamente a la clase";
+					$this->view->mensajeExito = "Grupo inscrito correctamente a la clase";
 
-			}else{
-				$this->view->mensajeError = "No se pudo inscribir el grupo a la clase";
+				}else{
+					$this->view->mensajeError = "No se pudo inscribir el grupo a la clase";
+				}
+				
 			}
-			
+
 		}
 
 

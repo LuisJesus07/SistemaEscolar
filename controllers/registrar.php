@@ -143,7 +143,7 @@ class Registrar extends Controller{
 
 			}else{
 
-				$mensajeError = "No se pudo ingresar al alumno";
+				$mensajeError = "No se pudo ingresar al alumno. Esa matricula ya existe";
 
 			} 
 				
