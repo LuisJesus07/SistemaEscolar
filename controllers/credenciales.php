@@ -25,7 +25,14 @@ class Credenciales extends Controller{
 		$sizeImagen = $_FILES['rutaFoto']['size'];//tamaño de la img
 		$typeImagen = $_FILES['rutaFoto']['type'];//tipo de archivo
 
-		if($sizeImagen <=5000000){
+		//validar que el alumno no tenga una credencial ya asignada
+		if($this->model->validarCredencial($matricula) == 1){
+			$this->view->mensajeError = "El alumno con la matricula ".$matricula." ya tiene credencial";
+		}
+
+		if(empty($this->view->mensajeError)){
+
+			if($sizeImagen <=5000000){
 
 			if ($typeImagen == "image/jpeg" || $typeImagen == "image/jpg" || $typeImagen == "image/png"){
 				//ruta de la carpeta en el servidor
@@ -38,25 +45,28 @@ class Credenciales extends Controller{
 				$this->view->mensajeError = "Imagen no compatible";
 			}
 
-		}else{
-			$this->view->mensajeError = "Imagen muy pesada";
-		}
+			}else{
+				$this->view->mensajeError = "Imagen muy pesada";
+			}
 
-		//obtener id del alumno mediante la matricula
-		$idAlumno = $this->model->getIdAlumno($matricula);
+			//obtener id del alumno mediante la matricula
+			$idAlumno = $this->model->getIdAlumno($matricula);
+
+			
 
 		
+			if($this->model->insertCredencial(['idAlumno' => $idAlumno,
+											   'rutaFoto' => $rutaFoto,
+											   'firma' => $firma])){
 
-	
-		if($this->model->insertCredencial(['idAlumno' => $idAlumno,
-										   'rutaFoto' => $rutaFoto,
-										   'firma' => $firma])){
+				$this->view->mensajeExito = "Se ha registrado una credencial";
 
-			$this->view->mensajeExito = "Se ha registrado una credencial";
+			}else{
+				$this->view->mensajeError = "No se ha podido registrar";
+			}
 
-		}else{
-			$this->view->mensajeError = "No se ha podido registrar";
 		}
+
 		
 	
 		$this->renderRegistrar();

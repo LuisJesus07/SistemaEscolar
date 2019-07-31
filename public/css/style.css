@@ -404,7 +404,51 @@ tr:nth-child(even){
 }
 
 .firma{
-    margin-top: 22&;
     margin-top: 25%;
     margin-left: 10%;
+}
+
+/* login */
+.form-login{
+	float: right;
+	width: 40%;
+	height: 77.2vh;
+}
+
+.form-login h1{
+	font-family: Varela;
+	font-size: 6vh;
+	text-align: center;
+	margin-top: 2%;
+}
+
+.form-login form{
+	margin-top: 5%;
+	margin-left: 18%;
+}
+
+.form-login form input{
+	margin-top: 4%;
+	width: 80%;
+	height: 5vh;
+}
+
+.iniciar{
+    width: 154px;
+    height: 35px;
+    margin-top: 7%;
+    margin-left: 25%;
+}
+
+.social-login{
+	width: 60%;
+	margin-left: 22%;
+	margin-top: 10%;
+}
+
+.fondo-login{
+	width: 60%;
+	height: 77.2vh;
+	background: url('../img/UABCS.jpg');
+	background-size: cover;
 }

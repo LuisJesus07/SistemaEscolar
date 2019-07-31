@@ -44,6 +44,32 @@ class CredencialesModel extends Model{
 		}
 	}
 
+
+
+	function validarCredencial($matricula){
+
+		try{
+
+			$query = $this->db->connect()->prepare('SELECT COUNT(ALU.matricula) 
+													FROM alumnos AS ALU
+													INNER JOIN generaciones AS GEN ON GEN.idGeneracion=ALU.idGeneracion
+													INNER JOIN grupos AS GRU ON GRU.idGrupo=ALU.idGrupo
+													INNER JOIN grados AS GRA ON GRA.idGrado=GRU.idGrado
+													INNER JOIN sexo AS SEX ON SEX.idSexo=ALU.idSexo
+													INNER JOIN credenciales AS CRE ON ALU.idAlumno=CRE.idAlumno
+													WHERE ALU.matricula =:matricula');
+
+			$query->execute(['matricula' => $matricula]);
+
+
+			return $query->fetch()[0];
+
+		}catch(PDOException $e){
+			return false;
+		}
+
+	}
+
 }
 
 ?>

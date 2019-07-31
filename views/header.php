@@ -37,7 +37,7 @@
 						</li>
 
 						<li>
-							<a href="#"><i class="fas fa-sign-out-alt salir"></i></a>
+							<a href="<?php echo constant('URL') ?>cerrarSesion"><i class="fas fa-sign-out-alt salir"></i></a>
 						</li>
 
 					</ul>
