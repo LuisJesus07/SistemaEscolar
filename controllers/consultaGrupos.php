@@ -20,7 +20,9 @@ class ConsultaGrupos extends Controller{
 
 
 
-		$this->view->render('consultagrupos/index');
+		//$this->view->render('consultagrupos/index');
+		$vistaCargar = 'consultagrupos/index';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 

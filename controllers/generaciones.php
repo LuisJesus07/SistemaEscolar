@@ -11,7 +11,9 @@ class Generaciones extends Controller{
 
 	function renderVista(){
 
-		$this->view->render('generaciones/index');
+		//$this->view->render('generaciones/index');
+		$vistaCargar = 'generaciones/index';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 

@@ -16,7 +16,9 @@ class Registrar extends Controller{
 
 	function renderVista(){
 
-		$this->view->render('registrar/menu');
+		$vistaCargar = 'registrar/menu';
+		$this->verificarUsuario($vistaCargar);
+
 
 	}
 
@@ -33,7 +35,10 @@ class Registrar extends Controller{
 		//pasarle las generaciones a la vista
 		$this->view->generaciones = $generaciones;
 
-		$this->view->render('registrar/index');
+		$vistaCargar = 'registrar/index';
+		$this->verificarUsuario($vistaCargar);
+
+		//$this->view->render('registrar/index');
 	}
 
 	function registrarAlumno(){

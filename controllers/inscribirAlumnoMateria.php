@@ -23,7 +23,9 @@ class InscribirAlumnoMateria extends Controller{
 		$clases = $this->model->getClases();
 		$this->view->clases = $clases;
 
-		$this->view->render('inscribiralumnomateria/index');
+		//$this->view->render('inscribiralumnomateria/index');
+		$vistaCargar = 'inscribiralumnomateria/index';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 	function registrarAlumnoMateria(){

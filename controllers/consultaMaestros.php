@@ -17,7 +17,9 @@ class ConsultaMaestros extends Controller{
 		//pasarle a la vista los maestros
 		$this->view->maestros = $maestros;
 
-		$this->view->render('consultamaestros/index');
+		//$this->view->render('consultamaestros/index');
+		$vistaCargar = 'consultamaestros/index';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 
@@ -32,7 +34,9 @@ class ConsultaMaestros extends Controller{
 
 		$this->view->maestro = $maestro;
 
-		$this->view->render('consultamaestros/detalle');
+		//$this->view->render('consultamaestros/detalle');
+		$vistaCargar = 'consultamaestros/detalle';
+		$this->verificarUsuario($vistaCargar);
 
 	}
 
@@ -85,7 +89,9 @@ class ConsultaMaestros extends Controller{
 		}
 
 
-		$this->view->render('consultamaestros/detalle');
+		//$this->view->render('consultamaestros/detalle');
+		$vistaCargar = 'consultamaestros/detalle';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 

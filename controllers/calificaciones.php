@@ -10,7 +10,9 @@ class Calificaciones extends Controller{
 
 	function renderVista(){
 
-		$this->view->render('calificaciones/menu');
+		$vistaCargar = 'calificaciones/menu';
+		$this->verificarUsuario($vistaCargar);
+		//$this->view->render('calificaciones/menu');
 	}
 
 	function renderAlumnosMateria(){
@@ -28,7 +30,10 @@ class Calificaciones extends Controller{
 		$materias = $this->model->getMaterias();
 		$this->view->materias = $materias;
 
-		$this->view->render('calificaciones/index');
+
+		$vistaCargar = 'calificaciones/index';
+		$this->verificarUsuario($vistaCargar);
+		//$this->view->render('calificaciones/index');
 	}
 
 
@@ -86,8 +91,9 @@ class Calificaciones extends Controller{
 
 		$this->view->calificaciones = $calificaciones;
 
-
-		$this->view->render('calificaciones/detalle');
+		$vistaCargar = 'calificaciones/detalle';
+		$this->verificarUsuario($vistaCargar);
+		//$this->view->render('calificaciones/detalle');
 
 	}
 
@@ -127,8 +133,9 @@ class Calificaciones extends Controller{
 			$this->view->mensajeError = "No se ha podido actualizar las calificaciones";
 		}
 
-
-		$this->view->render('calificaciones/detalle');
+		$vistaCargar = 'calificaciones/detalle';
+		$this->verificarUsuario($vistaCargar);
+		//$this->view->render('calificaciones/detalle');
 		
 	}
 }

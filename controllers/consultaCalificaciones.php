@@ -9,7 +9,9 @@ class ConsultaCalificaciones extends Controller{
 
 	function renderVista(){
 
-		$this->view->render('consultacalificaciones/index');
+		$vistaCargar = 'consultacalificaciones/index';
+		$this->verificarUsuario($vistaCargar);
+		//$this->view->render('consultacalificaciones/index');
 	}
 
 	function verCalificaciones(){

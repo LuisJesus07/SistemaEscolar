@@ -10,7 +10,9 @@ class ConsultaClases extends Controller{
 
 	function renderVista(){
 
-		$this->view->render('consultaclases/index');
+		//$this->view->render('consultaclases/index');
+		$vistaCargar = 'consultaclases/index';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 	function verClases(){

@@ -11,12 +11,16 @@ class Materias extends Controller{
 
 	function renderVista(){
 
-		$this->view->render('materias/menu');
+		//$this->view->render('materias/menu');
+		$vistaCargar = 'materias/menu';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 	function renderRegistrarMateria(){
 
-		$this->view->render('materias/index');
+		//$this->view->render('materias/index');
+		$vistaCargar = 'materias/index';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 	function renderRegistrarClases(){
@@ -29,7 +33,9 @@ class Materias extends Controller{
 		$maestros = $this->model->getAllMaestros();
 		$this->view->maestros = $maestros;
 
-		$this->view->render('materias/clases');
+		//$this->view->render('materias/clases');
+		$vistaCargar = 'materias/clases';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 
@@ -49,7 +55,7 @@ class Materias extends Controller{
 
 		}
 
-		$this->view->render('materias/index');
+		$this->renderRegistrarMateria();
 	}
 
 	function registrarClase(){

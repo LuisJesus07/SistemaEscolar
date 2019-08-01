@@ -13,13 +13,16 @@ class Maestros extends Controller{
 
 	function renderVista(){
 
-		$this->view->render('maestros/menu');
+		//$this->view->render('maestros/menu');
+		$vistaCargar = 'maestros/menu';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 	function renderRegistrarMaestro(){
 
-		$this->view->render('maestros/index');
-
+		//$this->view->render('maestros/index');
+		$vistaCargar = 'maestros/index';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 

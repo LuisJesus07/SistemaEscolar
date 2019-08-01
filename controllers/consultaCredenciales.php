@@ -8,7 +8,9 @@ class consultaCredenciales extends Controller{
 	}
 
 	function renderVista(){
-		$this->view->render('consultaCredenciales/index');
+		//$this->view->render('consultaCredenciales/index');
+		$vistaCargar = 'consultaCredenciales/index';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 	function verCredencial(){

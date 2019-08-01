@@ -9,11 +9,15 @@ class Credenciales extends Controller{
 	}
 
 	function renderVista(){
-		$this->view->render('credenciales/menu');
+		//$this->view->render('credenciales/menu');
+		$vistaCargar = 'credenciales/menu';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 	function renderRegistrar(){
-		$this->view->render('credenciales/index');
+		//$this->view->render('credenciales/index');
+		$vistaCargar = 'credenciales/index';
+		$this->verificarUsuario($vistaCargar);
 	}
 
 	function registrarCredencial(){
