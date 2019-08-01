@@ -36,6 +36,8 @@ class Login extends Controller{
 						case '2':
 							//si es 2 obtenemos la info del alumno;
 							$alumno = $this->model->getInfoAlumno($privilegios['idAlumno']);
+							//mandamos al mainalumno
+							header("location:".constant('URL')."mainalumno");
 							break;
 						default:
 							echo "no existe";
@@ -46,9 +48,10 @@ class Login extends Controller{
 		}else{
 			//en caso de no existir mostramos mensaje
 			$this->view->mensajeError = "El usuario o la contraseña son incorrectos";
+			$this->renderVista();
 		}
 
-		//$this->renderVista();
+		
 	}
 }
 

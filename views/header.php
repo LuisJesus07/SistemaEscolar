@@ -1,3 +1,10 @@
+<?php
+	
+	include_once 'models/infocuenta.php';	
+	$infoCuenta = $_SESSION['infoCuenta'];
+	$infoCuenta = unserialize($infoCuenta);
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +26,22 @@
 
 				<nav class="menu">
 					<ul class="main-menu">
+
+						<?php if($infoCuenta->privilegios == '2'){ ?>
+
+						<li>
+							<a href="<?php echo constant('URL') ?>mainalumno">Principal</a>
+						</li>
+
+						<li>
+							<a href="<?php echo constant('URL') . 'consulta/verAlumno/' ?>">Mi información</a>
+						</li>
+
+						<li>
+							<a href="<?php echo constant('URL') . 'consultaCalificaciones/verCalificaciones/' ?>">Mis calificaciones</a>
+						</li>	
+
+						<?php }else{ ?>	
 						
 						<li>
 							<a href="<?php echo constant('URL') ?>main">Principal</a>
@@ -36,9 +59,13 @@
 							<a href="<?php echo constant('URL') ?>calificaciones">Calificaciones</a>
 						</li>
 
+						<?php } ?>
+
 						<li>
 							<a href="<?php echo constant('URL') ?>cerrarSesion"><i class="fas fa-sign-out-alt salir"></i></a>
 						</li>
+
+					
 
 					</ul>
 
@@ -50,7 +77,16 @@
 			</div>
 
 			<div class="logo">
+
+				<?php if($infoCuenta->privilegios == '2'){ ?>
+
+				<a href="<?php echo constant('URL') ?>mainalumno"><img src="<?php echo constant('URL') ?>public/img/logouabcs1.png"></a>
+
+				<?php }else{ ?>
+
 				<a href="<?php echo constant('URL') ?>main"><img src="<?php echo constant('URL') ?>public/img/logouabcs1.png"></a>
+
+				<?php } ?>	
 			</div>
 			
 			

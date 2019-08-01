@@ -13,6 +13,16 @@
 
 		<h1>Ver Calificaciones</h1>
 
+		<?php
+	
+			include_once 'models/infocuenta.php';	
+			$infoCuenta = $_SESSION['infoCuenta'];
+			$infoCuenta = unserialize($infoCuenta);
+			//si esta logeado el admin mostramos formulario
+			if($infoCuenta->privilegios == '1'){
+
+		?>
+
 		<form method="POST" class="busqueda-calificaciones" action="<?php echo constant('URL'). 'consultaCalificaciones/verCalificaciones' ?>">
 
 			<label>Matricula Alumno: </label>
@@ -21,6 +31,8 @@
 			<input type="submit" name="" value="Ver calificaciones">
 			
 		</form>
+
+		<?php } ?>
 
 		<?php if(isset($this->calificaciones)){ ?>
 

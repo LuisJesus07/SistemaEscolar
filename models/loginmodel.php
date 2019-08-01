@@ -62,6 +62,47 @@ class Loginmodel extends Model{
 		}
 		
 	}
+
+
+
+	function getInfoAlumno($idAlumno){
+
+		try{
+
+			$query = $this->db->connect()->prepare('SELECT ALU.matricula,ALU.nombre, ALU.apellidos, CRE.rutaFoto, CORR.correo, CORR.privilegios
+				FROM alumnos AS ALU
+				INNER JOIN correos AS CORR ON CORR.idAlumno=ALU.idAlumno
+				INNER JOIN credenciales AS CRE ON CRE.idAlumno=ALU.idAlumno
+				WHERE ALU.idAlumno=:idAlumno');
+
+			$query->execute(['idAlumno' => $idAlumno]);
+
+			while($row = $query->fetch()){
+				$infoCuenta = new InfoCuenta();
+
+				$infoCuenta->matricula = $row['matricula'];
+				$infoCuenta->nombre = $row['nombre'];
+				$infoCuenta->apellidos = $row['apellidos'];
+				$infoCuenta->rutaFoto = $row['rutaFoto'];
+				$infoCuenta->correo = $row['correo'];
+				$infoCuenta->privilegios = $row['privilegios'];
+			}
+
+			//guardamos la info del admin en una sesion en forma de objeto
+			session_start();
+			//el serialize nos permite acceder a los atributos del objeto
+			$_SESSION['infoCuenta'] = serialize($infoCuenta);
+
+
+			return $_SESSION['infoCuenta'];
+
+		}catch(PDOExeption $e){
+			return false;
+		}
+
+	}
+
+
 }
 
 ?>

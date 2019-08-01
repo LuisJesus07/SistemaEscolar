@@ -31,19 +31,32 @@ class Consulta extends Controller{
 
 	function verAlumno($param = null){
 
-		$matricula = $param[0];
+		include_once 'models/infocuenta.php';
+		session_start();	
+		$infoCuenta = $_SESSION['infoCuenta'];
+		$infoCuenta = unserialize($infoCuenta);
+
+		if($infoCuenta->privilegios == '2'){
+			$matricula = $infoCuenta->matricula;
+		}else{
+			$matricula = $param[0];
+		}
+
+
 
 		$alumno = $this->model->getById($matricula);
 
 		//mantener la matricula del alumno en caso de que el usuario lo cambie en la vista
-		session_start();
+		if(!isset($_SESSION)){
+			session_start();
+		}
 		$_SESSION['idMatricula'] = $alumno->matricula;
 
 		$this->view->alumno = $alumno;
 
-
+		//verificar que este logeado un alumno o el admin
 		$vistaCargar = 'consulta/detalle';
-		$this->verificarUsuario($vistaCargar);
+		$this->verificarSesion($vistaCargar);
 		//$this->view->render('consulta/detalle');
 
 
