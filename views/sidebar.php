@@ -9,18 +9,28 @@
 
 			<img src="<?php echo constant('URL') . 'public/img/fotosCredencial/'. $infoCuenta->rutaFoto ?>">
 
-			<?php if($infoCuenta->privilegios == '1'){ ?>
+			<div class="info-cuenta">
+				
+				<div class="info-cuenta-cabecera">Tipo cuenta: </div>
 
-			<p>Administrador</p>
+				<?php if($infoCuenta->privilegios == '1'){ ?>
 
-			<?php }else{ ?>
+				<div class="info-cuenta-cabecera informacion">Administrador</div>
 
-			<p>Alumno</p>
-			
-			<?php } ?>
+				<?php }else{ ?>
 
-			<p><?php echo $infoCuenta->nombre ?></p>
-			<p><?php echo $infoCuenta->correo ?></p>
+				
+				<div class="info-cuenta-cabecera informacion">Alumno</div>
+				
+				<?php } ?>
+
+				<div class="info-cuenta-cabecera">Nombre: </div>
+				<div class="info-cuenta-cabecera informacion"><?php echo $infoCuenta->nombre." ".$infoCuenta->apellidos ?></div>
+
+				<div class="info-cuenta-cabecera">Correo: </div>
+				<div class="info-cuenta-cabecera informacion"><?php echo $infoCuenta->correo ?></div>
+
+			</div>
 
 
 			<div class="social">

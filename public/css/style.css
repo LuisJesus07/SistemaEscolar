@@ -86,11 +86,38 @@
     margin-top: 15px;
 }
 
+.info-cuenta{
+	width: 60%;
+	margin: 0 auto;
+	background-color: red;
+	margin-top: 3%;
+}
+
+.info-cuenta-cabecera{
+	font-family: 'Open Sans', Tahoma, Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	font-weight: bolder;
+	padding: 5px;
+	background: linear-gradient(#0077d2, #005a9f);
+	color: white;
+	border-style: double;
+
+}
+
+.informacion{
+	font-size: 17px;
+	color: black;
+	font-weight: unset;
+	background: #d5dee6;
+	border-style: unset;
+	border-width: 2px;
+}
+
 .social{
 	width: 80%;
 	height: 150px;
 	margin-left: 10%;
-	margin-top: 80%;
+	margin-top: 35%;
 }
 
 .social img{
@@ -452,3 +479,5 @@ tr:nth-child(even){
 	background: url('../img/UABCS.jpg');
 	background-size: cover;
 }
+
+

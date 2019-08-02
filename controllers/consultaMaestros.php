@@ -104,9 +104,9 @@ class ConsultaMaestros extends Controller{
 
 		if($this->model->deleteMaestro($matricula)){
 
-			$mensaje = "Maestro eliminado correctamente";
+			$mensaje = '<div class="error exito">Maestro eliminado correctamente</div>';
 		}else{
-			$mensaje = "No se pudo eliminar al maestro";
+			$mensaje = '<div class="error">No se ha podido eliminar al maestro</div>';
 		}
 
 		echo $mensaje;

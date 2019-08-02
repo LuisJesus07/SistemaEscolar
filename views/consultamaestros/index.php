@@ -12,7 +12,7 @@
 		<div class="panel">
 
 		<h1>Maestros</h1>
-		<div id="respuesta"  class="center"></div>
+		<div id="respuesta"></div>
 
 
 		<table class="tabla consulta-alumno">
