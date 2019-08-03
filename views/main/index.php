@@ -58,11 +58,6 @@
 					
 				</div>
 
-				<div class="opcion">
-					<img src="<?php echo constant('URL') ?>public/img/credencial.png">
-
-					<a href="<?php echo constant('URL') ?>credenciales"><input type="button" name="" value="Credenciales"></a>
-				</div>
 				
 			</div>
 			

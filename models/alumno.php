@@ -18,6 +18,9 @@ class Alumno{
 	public $firma;
 	public $rutaFoto;
 
+	//para el correo
+	public $correo;
+
 }
 
 ?>

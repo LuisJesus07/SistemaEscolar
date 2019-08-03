@@ -6,7 +6,6 @@ class App{
 
 	function __construct(){
 
-		//echo "<p>Nueva App</p>";
 
 		//obtenemos lo que trae la url y lo asignamos a una variable
 		if(isset($_GET['url'])){

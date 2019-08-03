@@ -25,6 +25,18 @@
 				<a href="<?php echo constant('URL') ?>consulta"><input type="button" name="" value="Consultar Alumnos"></a>
 					
 			</div>
+
+			<div class="opcion">
+				<img src="<?php echo constant('URL') ?>public/img/credencial.png">
+
+				<a href="<?php echo constant('URL') ?>credenciales"><input type="button" name="" value="Credenciales"></a>
+			</div>
+
+			<div class="opcion">
+				<img src="<?php echo constant('URL') ?>public/img/correo.png">
+
+				<a href="<?php echo constant('URL') ?>correos"><input type="button" name="" value="Correo"></a>
+			</div>
 			
 		</div>
 
