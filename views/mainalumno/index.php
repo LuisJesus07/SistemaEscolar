@@ -34,6 +34,12 @@
 
 					<a href="<?php echo constant('URL') . 'consultaCalificaciones/verCalificaciones/'?>"><input type="button" name="" value="Mis calificaciones"></a>
 				</div>
+
+				<div class="opcion">
+					<img src="<?php echo constant('URL') ?>public/img/modificarCorreo.png">
+
+					<a href="<?php echo constant('URL') . 'micuenta'?>"><input type="button" name="" value="Mi Cuenta"></a>
+				</div>
 				
 			</div>
 			
