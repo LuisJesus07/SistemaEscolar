@@ -16,13 +16,19 @@ class Login extends Controller{
 		$correo = $_POST['correo'];
 		$password = $_POST['password'];
 
+
+
 		//verificamos que exista un usuario con ese correo y contaseña
 		if($this->model->verificarUsuario(['correo' => $correo,
 										   'password' => $password]) != null){
 
+			
+
 			//si existe un usuario con esa contra y correo obtenemos el tipo de usuario que es(Alumno o admin)
 			$privilegios = $this->model->verificarUsuario(['correo' => $correo,
 										   'password' => $password]);
+
+			var_dump($privilegios['privilegios']);
 
 			
 			//dependiendo del tipo de usuario obtenemos la ind¿formacion

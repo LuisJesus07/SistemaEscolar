@@ -10,9 +10,9 @@ class ConsultaCalificaciones extends Controller{
 	function renderVista(){
 
 		//verificar que este logeado un alumno o el admin
-		$vistaCargar = 'ConsultaCalificaciones/index';
-		$this->verificarSesion($vistaCargar);
-		//$this->view->render('consultacalificaciones/index');
+		//$vistaCargar = 'ConsultaCalificaciones/index';
+		//$this->verificarSesion($vistaCargar);
+		$this->view->render('consultacalificaciones/index');
 	}
 
 	function verCalificaciones(){

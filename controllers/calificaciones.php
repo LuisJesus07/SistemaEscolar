@@ -10,9 +10,9 @@ class Calificaciones extends Controller{
 
 	function renderVista(){
 
-		$vistaCargar = 'calificaciones/menu';
-		$this->verificarUsuario($vistaCargar);
-		//$this->view->render('calificaciones/menu');
+		//$vistaCargar = 'calificaciones/menu';
+		//$this->verificarUsuario($vistaCargar);
+		$this->view->render('calificaciones/menu');
 	}
 
 	function renderAlumnosMateria(){

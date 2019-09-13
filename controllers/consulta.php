@@ -22,9 +22,10 @@ class Consulta extends Controller{
 		$this->view->alumnos = $alumnos;
 
 		//mando a llamr el metodo render de la clase view y le paso la vista a cargar
-		$vistaCargar = 'consulta/index';
-		$this->verificarUsuario($vistaCargar);
-		//$this->view->render('consulta/index');
+		//$vistaCargar = 'consulta/index';
+		//$this->verificarUsuario($vistaCargar);
+
+		$this->view->render('consulta/index');
 	}
 
 

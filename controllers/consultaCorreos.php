@@ -12,8 +12,9 @@ class ConsultaCorreos extends Controller{
 		$correos = $this->model->getAllCorreos();
 		$this->view->correos = $correos;
 
-		$vistaCargar = 'consultacorreos/index';
-		$this->verificarUsuario($vistaCargar);
+		//$vistaCargar = 'consultacorreos/index';
+		//$this->verificarUsuario($vistaCargar);
+		$this->view->render('consultacorreos/index');
 
 
 	}
